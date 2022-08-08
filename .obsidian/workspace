@@ -1,0 +1,137 @@
+{
+  "main": {
+    "id": "479caf94075b9ece",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f1d79cf11b1a3f8",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "business-manager.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d51fbb02a8562c99",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9894485eb5672b8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc6531159da1673a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6b6c96e560176336",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f993c8299e23e3f2",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "621769846f78c7b9",
+    "type": "split",
+    "children": [
+      {
+        "id": "469eb8c0c3cc65b0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ebc8fc78892b505e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "business-manager.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "65120efe500a5242",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "business-manager.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "88a37710d18a236c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "18284a8caee2f22c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "business-manager.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "0f1d79cf11b1a3f8",
+  "lastOpenFiles": [
+    "pixel-implementation.md",
+    "business-manager.md",
+    "README.md"
+  ]
+}
