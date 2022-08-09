@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "business-manager.md",
+            "file": "pixel-implementation.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "business-manager.md",
+                "file": "pixel-implementation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "business-manager.md",
+                "file": "pixel-implementation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "business-manager.md"
+                "file": "pixel-implementation.md"
               }
             }
           }
@@ -130,8 +130,8 @@
   },
   "active": "0f1d79cf11b1a3f8",
   "lastOpenFiles": [
-    "pixel-implementation.md",
     "business-manager.md",
+    "pixel-implementation.md",
     "README.md"
   ]
 }

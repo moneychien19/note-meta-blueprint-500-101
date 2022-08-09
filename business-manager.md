@@ -79,7 +79,8 @@ There are three ways to add assets to Business Manager:
     - You can assign people the role of either **employee** or **admin**.
     - [Add people to Business Manager](https://www.facebook.com/business/help/2169003770027706?id=2190812977867143)
 - Partners
-    - Other businesses, such as agencies, vendors or clients with whom you work. You can only **share permissions to assets** with your partners and can’t give partners access as admins or employees.
+    - Other businesses, such as agencies, vendors or clients with whom you work.
+    - You can only **share permissions to assets** with your partners and can’t give partners access as admins or employees.
     - [Give a partner access to your assets](https://www.facebook.com/business/help/1717412048538897?id=2190812977867143)
     - [Ask a partner to share assets](https://www.facebook.com/business/help/408759743051505?id=2190812977867143)
 - System Users
@@ -94,8 +95,8 @@ There are three ways to add assets to Business Manager:
 You use **task-based permissions** to grant access to your business assets in Business Manager settings (for example, Pages, pixels or ad accounts).
 
 Tasks for each asset are divided into two categories:
-- *Standard access*: Toggle on each task you'd like the person to perform.
-- *Admin access*: Toggle on admin access to allow the person to manage the asset and perform all available tasks.
+- **Standard access**: Toggle on each task you'd like the person to perform.
+- **Admin access**: Toggle on admin access to allow the person to manage the asset and perform all available tasks.
 
 ## Key Knowledge
 - Permissions
