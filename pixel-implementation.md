@@ -129,7 +129,7 @@ fbq('init', '1234567890');
 fbq('track', 'PageView');
 fbq('track', 'AddToCart');
 fbq('track', 'ViewContent'); 
-fbq('track', 'AddToWishlist')
+fbq('track', 'AddToWishlist');
 ```
 
 ### Customer Journey
@@ -170,6 +170,7 @@ Custom properties work with **both standard and custom events**, and they can he
 ```js
 // standard event, customize appointment type and city as parameters
 fbq('track', 'Schedule', { appointment_type: "glasses", city: "New York" });
+
 // custom event, customize promotion as parameter
 fbq('trackCustom', 'ShareDiscount', { promotion: 'share_discount_10' });
 ```
