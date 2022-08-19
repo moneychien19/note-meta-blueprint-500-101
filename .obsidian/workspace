@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "pixel-troubleshoot.md",
+            "file": "advanced-matching.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pixel-troubleshoot.md",
+                "file": "advanced-matching.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pixel-troubleshoot.md",
+                "file": "advanced-matching.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pixel-troubleshoot.md"
+                "file": "advanced-matching.md"
               }
             }
           }
@@ -130,8 +130,8 @@
   },
   "active": "0f1d79cf11b1a3f8",
   "lastOpenFiles": [
-    "advanced-matching.md",
     "pixel-troubleshoot.md",
+    "advanced-matching.md",
     "README.md",
     "business-manager.md",
     "pixel-implementation.md"

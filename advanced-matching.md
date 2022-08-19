@@ -35,3 +35,22 @@ Use this if
 - your business is in a **regulated vertical**, which is prohibited from the use of the automatic version.
 
 ## Privacy and Transparency
+Advertisers who want to use advanced matching must adhere to specific rules, terms and regulations including
+- [Terms of Service 服務條款](https://www.facebook.com/terms.php)
+- [Facebook Business Tools Terms 商業工具使用條款](https://www.facebook.com/legal/terms/businesstools)
+- [General Data Protection Regulation (GDPR)](https://developers.facebook.com/docs/meta-pixel/implementation/gdpr)
+- [California Consumer Privacy Act (CCPA)](https://developers.facebook.com/docs/marketing-apis/data-processing-options)
+
+Note that Facebook ignores matching requests that send unhashed information values. Customer information **must be hashed** before transmission to Facebook.
+- When the pixel can't automatically hash customer information (for example, an IMG pixel) you have to hash the data manually before transmitting to Facebook.
+- Otherwise customer information is hashed automatically in the browser. It can directly be passed to Facebook.
+
+## How Customer Information is Hashed
+In hashing process, a hash function converts data to a series of numbers and letters in a process that can't be reversed. Facebook uses one of the most advanced functions, which is called **SHA-256**.
+
+For people on iOS 14.5+ devices, we can’t use hashed customer data from advanced matching for opted-out events. We can only receive limited information consistent with Aggregated Event Measurement for opted-out events.
+
+## Key Knowledge
+- Determine whether automatic or manual advanced matching should be applied under a given situation (ie, whether there is a developer, or whether the industry is regulated).
+
+# Set Up Advanced Matching for Websites
