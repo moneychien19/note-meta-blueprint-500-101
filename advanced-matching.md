@@ -54,3 +54,27 @@ For people on iOS 14.5+ devices, we can’t use hashed customer data from advanc
 - Determine whether automatic or manual advanced matching should be applied under a given situation (ie, whether there is a developer, or whether the industry is regulated).
 
 # Set Up Advanced Matching for Websites
+Once your pixel is installed and working correctly, you can turn on automatic advanced matching with a few clicks in Events Manager. When using automatic advanced matching, make sure your website contains **form fields** where visitors enter relevant information, such as email address or phone number. 
+
+Once setup is complete, it may take **up to 48 hours** before you see results in Events Manager.
+
+## Automatic Advanced Matching
+1. Select a **pixel** in Event Manager.
+2. Click the **Setting (設定)** tab.
+3. Toggle on **Automatic Advanced Matching (自動進階配對)** option to set up matching.
+4. Click **Show Options (顯示顧客資料參數)** to check and toggle those options.
+
+## Manual Advanced Matching
+Use pixel base code to set up manual advanced matching.
+```js
+fbq('init', '{facebook-pixel-id}', {
+  em: '{user-email}',
+  ph: '{user-phone-number}', 
+  fn: '{user-first-name}'
+});
+```
+and those values will be hashed automatically by the pixel using SHA-256.
+
+Visit the [Advanced Matching for Facebook Developers](https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching) page for any updates to this process.
+
+# Troubleshooting for Advanced Matching for Websites
