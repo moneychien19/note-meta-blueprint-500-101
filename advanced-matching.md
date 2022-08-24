@@ -78,3 +78,16 @@ and those values will be hashed automatically by the pixel using SHA-256.
 Visit the [Advanced Matching for Facebook Developers](https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching) page for any updates to this process.
 
 # Troubleshooting for Advanced Matching for Websites
+
+## Troubleshooting Event Manager
+As mentioned in [Optimize and Troubleshoot the Pixel](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/pixel-troubleshoot.md#event-manager), you can troubleshoot your pixel in the **Diagnostics tab** in Events Manager.
+
+For example, if you have the pixel installed but don't see any signal, you can confirm that:
+- You’ve installed the pixel and pixel events on the correct webpage.
+- Your pixel works properly.
+- Your pixel is sending valid parameters `content_ids/contents`, `content_type`, `value` or `currency` in the correct format.
+
+## Troubleshooting with the Pixel Helper
+The Pixel Helper indicates when advanced matching parameters have successfully been transmitted.
+
+For instance, you send static values from example code such as `"{{email}}"` for the em field where the `{{email}}` should have been the real email address instead.
