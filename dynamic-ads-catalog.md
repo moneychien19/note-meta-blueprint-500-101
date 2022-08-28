@@ -160,11 +160,59 @@ You need to add required events and parameters to your pixel code.
 ### Required Events
 For dynamic ads specifically, you must add the `ViewContent`, `AddToCart`  and `Purchase` standard events. These events help you understand when someone takes those particular actions.
 
+It isn't necessary to include `ViewContent`, `AddToCart` and `Purchase` in the top eight events for dynamic ads to function, but the order of prioritization may affect reporting and performance. Prioritization determines which events are passed back for attribution that our system uses for reporting and delivery optimization, so **prioritize the events** you want to optimize and report on with dynamic ads. 
+
 ### Required Parameters
 You’re required to include the `content_type` and either the `content_ids` or `contents` parameter with each standard event.
 
-### Content IDs
-There are two ways to pass in content IDs to the pixel that are functionally equivalent.
+#### content_type
+You must set the value of `content_type` either to `product` or `product_group`.
 
+If you set `product` as `content_type`, then the value of `content_ids` will map to the `id` field in your catalog.
+```js
+fbq('track', 'AddtoCart', {
+	value: 5.50,
+	currency: 'USD',
+	content_type: 'product',
+	content_ids: ['DB_2']
+});
+```
+
+If you set `product_group` as `content_type`, then the value of `content_ids` will map to the `item_group_id` field in your catalog.
+```js
+fbq('track', 'AddtoCart', {
+	value: 5.50,
+	currency: 'USD',
+	content_type: 'product_group',
+	content_ids: ['DB_GROUP_1']
+});
+```
+
+#### content_ids or contents
 You can use both the `content_ids` and `contents` parameters.
-- `contents` parameter is an array of JSON objects with id and quantities contained within, and it's required for Collaborative Ads. Collaborative Ads is a feature of dynamic ads.
+
+`contents` parameter is an array of JSON objects with id and quantities contained within, and it's required for Collaborative Ads. Collaborative Ads is a feature of dynamic ads.
+```js
+// content_ids
+content_ids: ['DB_2']
+
+// contents
+contents: [{ id: 'DB_2', quantitiy: 2 }]
+```
+
+## Tips for Multiple Pixels or Domains
+- If you use multiple pixels,
+	- review the eight prioritized events for each domain in Events Manager. 
+	- confirm each pixel is installed to the domain and linked to the catalog.
+- If you use multiple domains,
+	- verify each website domain that you use as a product URL.
+	- avoid any product URLs that redirect to another domain.
+	- for each domain you use as a product URL, ensure that the associated conversion event is one of your 8 prioritized events.
+
+## Implementation
+1. Go to [Commerce Manager](https://business.facebook.com/commerce).
+2. Choose a catalog and select **Event (事件)** tab.
+3. Select **Connect To Tracking (連結追蹤功能)**.
+4. Select the **pixel or app SDK** you want to use and save.
+
+You've connected your pixel to your catalog. It may take up to 24 hours to be ready. When it's ready, you can [see how many items are ready for dynamic ads](https://www.facebook.com/help/946671458738854).
