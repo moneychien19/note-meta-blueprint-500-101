@@ -9,3 +9,4 @@
 - [Optimize and Troubleshoot the Pixel](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/pixel-troubleshoot.md)
 - [Advanced Matching for Websites](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/advanced-matching.md)
 - [Prepare and Setup Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog.md)
+- [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
