@@ -52,3 +52,44 @@ Sometimes, the system may flag items in your catalog for violations of [Faceboo
 
 ## Key Knowledge
 - Upload feed file and check the errors and warnings.
+
+# Troubleshoot Catalog Item Match Rate Issues
+
+You can see how many items are available for dynamic ads after you connect a pixel to your catalog. The content IDs in your pixel events code should match the IDs of items in your catalog and return a high match rate. 
+
+The Commerce Manager event source dashboard suggests that a “good” match rate is **90%** or more. This means that of all `content_ids` that Facebook receives, it’s able to match 90% or more of the individual IDs against the catalog.
+
+## Item Match Rate Issues
+Match rates display on a pixel level. They occur when pixel events and parameters are incorrectly set up or don't match the expected fields in the catalog. Always check the format and values of the `content_ids` and `content_type` parameters.
+
+If you see no received events and a lower match rate percentage, this may be the result of a common implementation issue.
+
+#### Incorrect Pixel Connected As Event Source
+If you **connect the incorrect pixel** as an event source, you may then send pixel data to the wrong catalog asset.
+
+#### Content IDs Not Exist in Feed or Catalog
+This may be due to business or **technical reasons**, so it’s important to identify the reason. Once you understand why the item ID doesn't exist in the catalog, you can either disregard it or determine the best course of action to resolve the issue.
+
+#### Product Synchronization Issues
+This will occur when
+- products on an ecommerce website don't reflect the catalog.
+	- For example, a client uses a third-party developer to create the feed, but the data source they provide the developer on a daily basis comes from a different internal data source.
+- the catalog is ingested frequently or at an unexpected time.
+	- For example, if a feed is scheduled to pull at 12:00 AM and the store updates its inventory at 2:00 AM, the latest set of products ingested into Facebook won’t accurately reflect the latest items in the ecommerce store.
+
+## Items Not in Catalog
+You may receive an error because your ad contains an item that was **recently updated or deleted in your feed**. When your catalog updates, new items are reviewed against Meta advertising policies.
+1. If you don't see the item in your catalog, wait up to **48 hours** for the system to update.  
+2. After 48 hours, check your catalog and publish your ad again.
+3. If there's no change after 48 hours, you should review any recently updated items. 
+4. Check and update the product set filtering and verify that you used the correct product set. If the filtering is correct, **publish the ad again**.
+
+## Tools to Debugging
+### Retargeting Pixel Debugger Tool
+The [retargeting pixel debugger tool](https://business.facebook.com/ads/retargeting_pixel/debug/) enables you to type in your pixel ID, then it will show two type of data:
+- Which catalog is associated with my pixel? 
+	- A list of catalog will be shown in this section. If you don't see your catalog ID in the list, it's not connected as a data source.
+- Which standard events have fired in the last seven days?
+	- Type of standard events and their counts will be shown in a chart. If you don't see a full set of standard events (`ViewContent`, `AddToCart` and `Purchase`) for your site, there's likely an implementation issue.
+
+
