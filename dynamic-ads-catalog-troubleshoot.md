@@ -84,12 +84,39 @@ You may receive an error because your ad contains an item that was **recently up
 3. If there's no change after 48 hours, you should review any recently updated items. 
 4. Check and update the product set filtering and verify that you used the correct product set. If the filtering is correct, **publish the ad again**.
 
-## Tools to Debugging
+## Troubleshooting Tools
 ### Retargeting Pixel Debugger Tool
 The [retargeting pixel debugger tool](https://business.facebook.com/ads/retargeting_pixel/debug/) enables you to type in your pixel ID, then it will show two type of data:
 - Which catalog is associated with my pixel? 
 	- A list of catalog will be shown in this section. If you don't see your catalog ID in the list, it's not connected as a data source.
 - Which standard events have fired in the last seven days?
 	- Type of standard events and their counts will be shown in a chart. If you don't see a full set of standard events (`ViewContent`, `AddToCart` and `Purchase`) for your site, there's likely an implementation issue.
+
+### Facebook Pixel Helper
+There are some section in Pixel Helper
+- Warnings: will list warnings such as "Products are missing from your catalog".
+- Custom Parameters Sent:  check whether all standard event parameters are correct.
+- Event Info: check whether event and parameter data are passed into the pixel without error.
+
+## Events Manager
+Events Manager enables you to see which events and parameters your pixel is currently passing. Please be aware that it may take up to **20 minutes** for you to see data.
+
+## Event Source Dashboard
+The **Events (事件)** tab in [Commerce Manager](https://www.facebook.com/commerce_manager/) helps you confirm that events and the catalog work correctly. It may take up to **24 hours** for the latest data to be available.
+
+The dashboard contains multiple sections
+
+#### Items available for retargeted ads (可用於再行銷廣告的商品)
+Select tabs to check match rate of the pixel against the catalogs.
+
+#### Website conversions with matched content IDs (包含相符內容編號的網站轉換)
+Shows a match rate graph. It tracks the match rate over time and indicates whether the past and current status is “good” and has a score of 90% or more.
+
+#### Content IDs missing from your catalogs (你的目錄缺少的內容編號)
+Toggle to view problematic content IDs. You can also view potentially problematic URLs. For example, pages that are passing in IDs that don't exist in the catalog.
+
+## Key Knowledge
+- Enable to troubleshoot given dashboard and pixel code.
+
 
 
