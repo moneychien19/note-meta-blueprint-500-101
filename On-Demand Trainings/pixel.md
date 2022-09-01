@@ -2,7 +2,7 @@
 
 ## Introduction to Pixel
 The Facebook pixel is a small piece of code on your website that measures the effectiveness of your advertising. It works across mobile and desktop web-based environments.
-<mark style="background: #FF5582A6;">Pixel can't work on apps.</mark>
+>Pixel can't work on apps.
 
 When customers visit to your website, they leave clues. If you have pixel installed, you can
 - turn those behaviors into conversions.
@@ -23,3 +23,11 @@ Tools and solutions the pixel powers are
 - Conversion lift: test the effectiveness of your advertising.
 
 ## Pixel Implementation
+Implementation steps:
+1. Create a pixel in Business Manager.
+2. Add the pixel base code.
+3. Add standard events code & parameters.
+4. If needed, add custom events code & parameters.
+5. If needed, set up custom conversions with URL or event rules.
+6. Verify that pixel works correctly.
+
