@@ -13,4 +13,4 @@
 - [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
 
 ### On-Demand Trainings
-- [Technical Pixel Implementation and Troubleshooting - Marketing Developer](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/On-Demand Trainings/pixel.md)
+- [Technical Pixel Implementation and Troubleshooting - Marketing Developer](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/On-Demand%20Trainings/pixel.md)
