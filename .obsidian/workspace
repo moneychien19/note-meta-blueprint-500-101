@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "On-Demand Trainings/pixel.md",
+            "file": "pixel-troubleshoot.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "On-Demand Trainings/pixel.md",
+                "file": "pixel-troubleshoot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "On-Demand Trainings/pixel.md",
+                "file": "pixel-troubleshoot.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "On-Demand Trainings/pixel.md"
+                "file": "pixel-troubleshoot.md"
               }
             }
           }
@@ -130,13 +130,13 @@
   },
   "active": "2c465302ed8d2551",
   "lastOpenFiles": [
-    "On-Demand Trainings/pixel.md",
-    "pixel-implementation.md",
     "README.md",
-    "dynamic-ads-catalog-troubleshoot.md",
     "dynamic-ads-catalog.md",
+    "pixel-implementation.md",
     "pixel-troubleshoot.md",
     "advanced-matching.md",
+    "On-Demand Trainings/pixel.md",
+    "dynamic-ads-catalog-troubleshoot.md",
     "business-manager.md"
   ]
 }

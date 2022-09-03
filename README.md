@@ -11,6 +11,3 @@
 - [Advanced Matching for Websites](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/advanced-matching.md)
 - [Prepare and Setup Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog.md)
 - [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
-
-### On-Demand Trainings
-- [Technical Pixel Implementation and Troubleshooting - Marketing Developer](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/On-Demand%20Trainings/pixel.md)

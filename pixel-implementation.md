@@ -1,7 +1,8 @@
 # Technical Pixel Implementation
 
 # Introduction
-The Facebook pixel is a small piece of code on your website that functions as an analytics tool. It **measures the actions** people take on your website and **determine the effectiveness** of your advertising.
+The Facebook pixel is a small piece of code on your website that functions as an analytics tool. It **measures the actions** people take on your website and **determine the effectiveness** of your advertising. It works across mobile and desktop web-based environments.
+>Pixel can't work on apps.
 
 When a customer visits your website, they leave clues based on their behavior. If you have the pixel installed, you can turn those key behaviors, also called signals of intent, into **conversions**.
 
@@ -26,7 +27,14 @@ Creates consistent data protection rules across Europe. It applies to companies 
 # Pixel Implementation
 ## Implementation
 1. Create a pixel in Business Manager
-2. Copy the piece of code and paste in the end of `<head>` tag.
+	1. Go to Events Manager.
+	2. Select **Connect Data sources (連結資料來源)** and choose **Web (網站)**.
+	3. Add your pixel name.
+	4. Add your website URL.
+	5. Choose **僅使用 Meta 像素**.
+	6. Select **Install Code Manually (手動設定)**, then the pixel code will be copied to your clipboard.
+2. Copy the piece of code and paste between the `<head></head>` tag.
+3. Verify that pixel works correctly (usually wait up to 20 minutes).
 
 ## About the Pixel Code
 The code will be like:
@@ -67,6 +75,7 @@ For deeper investigation, you can use DevTools (Network panel) to examine HTTP r
 - use to measure typical and predefined activities.
 - include [predefined actions](https://developers.facebook.com/docs/facebook-pixel/reference) that Facebook recognize and support across ad products.
 - common behaviors include `Search`, `ViewContent`, `AddToCart`, `Purchase`.
+
 ### Custom Event
 - are actions that the list of standard events doesn't include. You can give them a unique name to represent the measured action.
 - can also be used to build audiences.
@@ -75,11 +84,20 @@ For deeper investigation, you can use DevTools (Network panel) to examine HTTP r
 	```js
 	fbq('trackCustom', 'ViewVideo');
 	```
+
 ### Custom Conversions
 - use to measure very specific customer activity.
 - two ways to create custom conversions:
-    - URL-based custom conversions: create the conversion based on the **URL referrer** values you've captured with your PageView events.
-    - event-based custom conversions: create the conversion based on events that fire your pixel.
+    - **URL-based custom conversions**: create the conversion based on the **URL referrer** values you've captured with your PageView events.
+	    - For example, create a custom conversion based on the term "shirts" such as `https://shop.com/shirts/red`.
+    - **event-based custom conversions**: create the conversion based on events that fire your pixel.
+	    - For example, create a custom conversion against the `Purchase` event with price greater than 50 dollars.
+
+> Scenario: A client wants to measure the customers that reach their order confirmation page. 
+> Then there are two ways to build custom conversions:
+> 1. Implement custom conversions against the order confirmation page URL.
+> 2. Add Purchase tag, if they want more accurate report, they can add parameters.
+
 ### Determine Conversion Tracking Method
 | | Definition | Optimization | Attribution |
 |-|-|-|-|
@@ -135,7 +153,9 @@ fbq('track', 'AddToWishlist');
 ### Customer Journey
 Key behaviors that an ecommerce website typically sees by relevant standard events are
 
-`Search` → `ViewContent` → `AddToWishList` → `AddToCart` → `InitiateCheckout` → `AddPaymentInfo` → `Purchase`.
+`Search` → `ViewContent` → `AddToWishList` → `AddToCart` → `InitiateCheckout` → `AddPaymentInfo` → `Purchase`, 
+
+and standard events can track along the journey if you add them in your pixel code.
 
 ## Custom Events
 When possible, use the standard events. If they're not suitable for your needs though, you can track your own custom events.
@@ -176,5 +196,6 @@ fbq('trackCustom', 'ShareDiscount', { promotion: 'share_discount_10' });
 ```
 
 ## Multiple Pixels
-- You can initialize multiple pixels on one page for subsequent use.
-- When there's a possibility that multiple pixels might interact on your page, you should use the `fbq('trackSingle')` or `fbq('trackSingleCustom')` and specify the pixel ID within it to yield accurate tracking.
+You can initialize multiple pixels on one page for subsequent use.
+
+When there's a possibility that multiple pixels might interact on your page, you should use the `fbq('trackSingle')` or `fbq('trackSingleCustom')` and specify the pixel ID within it to yield accurate tracking.
