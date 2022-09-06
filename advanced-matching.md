@@ -75,6 +75,14 @@ fbq('init', '{facebook-pixel-id}', {
 ```
 and those values will be hashed automatically by the pixel using SHA-256.
 
+For example, if your Pixel ID was 283859598862258, you could do this:
+```js
+fbq('init', '283859598862258', {
+  em: 'email@email.com',
+  fn: 'first_name',    
+  ln: 'last_name'
+});
+```
 Visit the [Advanced Matching for Facebook Developers](https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching) page for any updates to this process.
 
 # Troubleshooting for Advanced Matching for Websites
@@ -89,5 +97,7 @@ For example, if you have the pixel installed but don't see any signal, you can c
 
 ## Troubleshooting with the Pixel Helper
 The Pixel Helper indicates when advanced matching parameters have successfully been transmitted.
+
+However, an indication that the advanced matching parameters have not been successfully transmitted may suggest that the customer value sent may be invalid or incorrectly formatted.
 
 For instance, you send static values from example code such as `"{{email}}"` for the em field where the `{{email}}` should have been the real email address instead.
