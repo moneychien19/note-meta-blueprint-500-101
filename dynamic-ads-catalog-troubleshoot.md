@@ -29,22 +29,22 @@ Don’t prevent items from appearing in your ads, but may affect the quality of 
 2. Follow the steps under **How to Fix**. This is available when you select **Review**. These instructions send you to the part of your catalog where you can fix the problem.
 
 ## Top 6 Data Feed File Errors
-#### Missing required field:  `image_link`
+### Missing required field:  `image_link`
 This error occurs when one or more of your items doesn’t have an image link.
 
-#### Missing universal IDs
+### Missing universal IDs
 You must provide at least one of the following identifiers for products: **brand name**, **Global Trade Identification Number (GTIN)** or **Manufacturer Part Number (MPN)**. This error occurs when none of these identifiers are in your data feed.
 
-#### Multiple data feeds contain the same product
+### Multiple data feeds contain the same product
 This error occurs when you have the **same ID listed in multiple data feed files**. You can have multiple data feed files, but each individual item can only be in one file.
 
-#### Inaccessible data feed files or bad request
+### Inaccessible data feed files or bad request
 This error occurs when we can’t access your data feed from your server or file hosting website.
 
-#### Unsupported HTML format
+### Unsupported HTML format
 This error occurs when you upload a spreadsheet file in the incorrect format or didn't include a valid xml declaration tag in your XML file.
 
-#### Missing required field, such as missing a description
+### Missing required field, such as missing a description
 This error occurs when you input one or more items or **the description is in all capital letters**.
 
 ## Advertising Policy
@@ -64,20 +64,26 @@ Match rates display on a pixel level. They occur when pixel events and parameter
 
 If you see no received events and a lower match rate percentage, this may be the result of a common implementation issue.
 
-#### Incorrect Pixel Connected As Event Source
+### Incorrect Pixel Connected As Event Source
 If you **connect the incorrect pixel** as an event source, you may then send pixel data to the wrong catalog asset.
 
-#### Content IDs Not Exist in Feed or Catalog
+### Content IDs Not Exist in Feed or Catalog
 This may be due to business or **technical reasons**, so it’s important to identify the reason. Once you understand why the item ID doesn't exist in the catalog, you can either disregard it or determine the best course of action to resolve the issue.
 
-#### Product Synchronization Issues
+### Pixel Implementation Issues
+This may occur due to
+- **lack of implementation of standard events**.
+- incorrect essential event parameters.
+- `content_ids` / `content_type` do not correspond to with correct catalog fields.
+
+### Product Synchronization Issues
 This will occur when
 - products on an ecommerce website don't reflect the catalog.
 	- For example, a client uses a third-party developer to create the feed, but the data source they provide the developer on a daily basis comes from a different internal data source.
 - the catalog is ingested frequently or at an unexpected time.
 	- For example, if a feed is scheduled to pull at 12:00 AM and the store updates its inventory at 2:00 AM, the latest set of products ingested into Facebook won’t accurately reflect the latest items in the ecommerce store.
 
-## Items Not in Catalog
+### Items Not in Catalog
 You may receive an error because your ad contains an item that was **recently updated or deleted in your feed**. When your catalog updates, new items are reviewed against Meta advertising policies.
 1. If you don't see the item in your catalog, wait up to **48 hours** for the system to update.  
 2. After 48 hours, check your catalog and publish your ad again.
@@ -95,13 +101,13 @@ The [retargeting pixel debugger tool](https://business.facebook.com/ads/retarget
 ### Facebook Pixel Helper
 There are some section in Pixel Helper
 - Warnings: will list warnings such as "Products are missing from your catalog".
-- Custom Parameters Sent:  check whether all standard event parameters are correct.
+- Custom Parameters Sent: check whether all standard event parameters are correct.
 - Event Info: check whether event and parameter data are passed into the pixel without error.
 
-## Events Manager
-Events Manager enables you to see which events and parameters your pixel is currently passing. Please be aware that it may take up to **20 minutes** for you to see data.
+### Events Manager
+Events Manager enables you to see which events and parameters your pixel is currently passing. Be aware that it may take up to **20 minutes** for you to see data.
 
-## Event Source Dashboard
+### Event Source Dashboard
 The **Events (事件)** tab in [Commerce Manager](https://www.facebook.com/commerce_manager/) helps you confirm that events and the catalog work correctly. It may take up to **24 hours** for the latest data to be available.
 
 The dashboard contains multiple sections
@@ -117,6 +123,3 @@ Toggle to view problematic content IDs. You can also view potentially problemati
 
 ## Key Knowledge
 - Enable to troubleshoot given dashboard and pixel code.
-
-
-

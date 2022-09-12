@@ -53,11 +53,19 @@ Following are additional considerations that may impact which is the best way to
 | Technical Resources      | none                                              | developer to create the feed from the back end of the store, or a member to deal with CSV or XML | developers to set up the metatags and implement the pixel                 |
 | Infrastructure Available | none                                              | HTTP or (S)FTP server to host the updated file for automatically data pull                       | none                                                                      | 
 
+> Scenario 1: A business has 1000 items in the inventory that don't change regularly.
+> 
+> Ideally they can use bulk upload. If they implement right meta tags on website, they can also use Facebook pixel.
+
+> Scenario 2: A business has 500 items in the inventory that change on weekly basis. They can't generate the feed, but they do have a frontend engineer on board.
+> 
+> Ideally they can use Facebook pixel. If they want to use bulk upload, they could manually add items each week in CSV files.
+
 ## Key Knowledge
 - Determine what way of adding items to a catalog should be applied under a given situation.
 
 # Prepare the Data Feed File
-A data feed file is a plaintext or spreadsheet file that represents the items in your business in a structured way. It also enables you to bulk upload many items to your catalog at once.
+A data feed file is a plaintext or spreadsheet file that represents the items in your business in a structured way. It also enables you to **bulk upload** many items to your catalog at once.
 
 ## Supported File Format
 ### Format
@@ -150,6 +158,11 @@ A product set is a **subset of products in your catalog** that dynamic ads use t
 	- A set for ads must contain four or more items. 
 	- A product set is necessary to create an ad set for your dynamic ads campaign.
 
+Steps of creating a product set are as follow.
+1. Go to [Commerce Manager](https://business.facebook.com/commerce_manager) and select specific catalog.
+2. Go to **Sets (商品組合)** in the sidebar.
+3. Click **建立組合** and choose whether to **Use Filter (使用篩選條件)** or **Manually Select Items (手動選擇商品)**.
+
 # Connect a Pixel to the Catalog
 Learn how to measure customer activity and use dynamic ads to deliver relevant items to people based on their interests, intent and actions.
 
@@ -158,7 +171,7 @@ For dynamic ads to work properly, you must create and install a pixel. If possi
 
 You need to add required events and parameters to your pixel code.
 ### Required Events
-For dynamic ads specifically, you must add the `ViewContent`, `AddToCart`  and `Purchase` standard events. These events help you understand when someone takes those particular actions.
+For dynamic ads specifically, you must add the `ViewContent`, `AddToCart`  and `Purchase` standard events. These events help you understand when someone takes those particular actions.
 
 It isn't necessary to include `ViewContent`, `AddToCart` and `Purchase` in the top eight events for dynamic ads to function, but the order of prioritization may affect reporting and performance. Prioritization determines which events are passed back for attribution that our system uses for reporting and delivery optimization, so **prioritize the events** you want to optimize and report on with dynamic ads. 
 
