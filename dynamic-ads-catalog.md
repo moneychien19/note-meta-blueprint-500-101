@@ -1,3 +1,4 @@
+# Prepare and Setup Catalog for Dynamic Ads
 # Introduction
 Dynamic ads use your online catalog to **automatically generate ads** that show **product recommendations** tailored to each person in your target audience. They offer powerful targeting options to help you reach people interested in your products.
 

@@ -11,3 +11,6 @@
 - [Advanced Matching for Websites](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/advanced-matching.md)
 - [Prepare and Setup Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog.md)
 - [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
+
+### Mind Map
+Click the [link](https://miro.com/app/board/uXjVPXotFXA=/?share_link_id=837443898094) to see mind map.
