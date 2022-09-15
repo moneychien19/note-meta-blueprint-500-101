@@ -4,7 +4,7 @@
 - [Business Manager](https://business.facebook.com)
 
 ## Road Map
-### Core Lessons
+### Notes for Core Lessons
 - [Manage Assets and Permissions in Business Manager](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/business-manager.md)
 - [Technical Pixel Implementation](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/pixel-implementation.md)
 - [Optimize and Troubleshoot the Pixel](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/pixel-troubleshoot.md)
@@ -13,4 +13,5 @@
 - [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
 
 ### Mind Map
-Click the [link](https://miro.com/app/board/uXjVPXotFXA=/?share_link_id=837443898094) to see mind map.
+- [Permalink](https://miro.com/app/board/uXjVPXotFXA=/?share_link_id=837443898094)
+- [PDF](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Mind%20Map.pdf)
