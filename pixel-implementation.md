@@ -8,9 +8,9 @@ When a customer visits your website, they leave clues based on their behavior. I
 
 ## Privacy Machanisms
 ### General Data Protection Regulation (GDPR)
-Creates consistent data protection rules across Europe. It applies to companies who process personal data about individuals in the EU regardless of where they're based.
+Creates consistent data protection rules across **Europe**. It applies to companies who process personal data about individuals in the EU regardless of where they're based.
 ### California Consumer Privacy Act (CCPA)
-Creates consistent data protection rules across Europe. It applies to companies who process personal data about individuals in the EU regardless of where they're based.
+Enhances privacy rights and consumer protection for California residents. It applies to companies who process personal data about individuals in the state of **California**, regardless of where the company is based. 
 
 ## Tools and Solutions of Pixels
 - Dynamic ads: capture customer activities.
