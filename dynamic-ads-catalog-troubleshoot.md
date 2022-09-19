@@ -90,7 +90,20 @@ You may receive an error because your ad contains an item that was **recently up
 3. If there's no change after 48 hours, you should review any recently updated items. 
 4. Check and update the product set filtering and verify that you used the correct product set. If the filtering is correct, **publish the ad again**.
 
+### Other Factors That May Cause Discrepancy
+Sometimes the **pixel was not loaded** before a page exit may cause differences in amount between complete events in Events Manager and events in reality.
+
 ## Troubleshooting Tools
+
+### Microdata Debugger Tool
+The [microdata debugger tool](https://business.facebook.com/ads/microdata/debug) helps you check if microdata tags are correct. It enables your catalog be match with information in your website.
+
+Microdata are tags that contain information about the item for sale, such as price, brand and availability
+
+> Scenario: An ecommerce market has a pixel configured to update their catalog inventory each time an item is purchased from their website. However, out-of-stock items are still being shown in the ads. 
+>
+> Then they can use the microdata debugger tool to determine whether the pixel is configured correctly. 
+
 ### Retargeting Pixel Debugger Tool
 The [retargeting pixel debugger tool](https://business.facebook.com/ads/retargeting_pixel/debug/) enables you to type in your pixel ID, then it will show two type of data:
 - Which catalog is associated with my pixel? 

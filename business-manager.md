@@ -98,5 +98,9 @@ Tasks for each asset are divided into two categories:
 - **Standard access**: Toggle on each task you'd like the person to perform.
 - **Admin access**: Toggle on admin access to allow the person to manage the asset and perform all available tasks.
 
+> Scenario: A client creates a Business Manager for their Facebook Page. The client wants an agency that owns a separate Business Manager to also manage the Page.
+>
+> Then the client can **share the Page as an asset** with the agency Business Manager.
+
 ## Key Knowledge
 - Permissions

@@ -2,6 +2,9 @@
 # Introduction
 Dynamic ads use your online catalog to **automatically generate ads** that show **product recommendations** tailored to each person in your target audience. They offer powerful targeting options to help you reach people interested in your products.
 
+
+Note that only **products that have been visited** by customers will appear in the dynamic ads.
+
 ## About Catalog
 A catalog is a container of information about the items you want to advertise and sell on Facebook or Instagram. To show your items to people who might want to buy them, you must **connect your catalog to dynamic ads**.
 
@@ -78,6 +81,13 @@ A data feed file is a plaintext or spreadsheet file that represents the items in
 - Scheduled feed upload: **8GB**.
 - Compressed files: **30GB** when uncompressed.
 - One-time file upload: **100MB**.
+
+> Scenario: A client uploads a data feed to their catalog and plans to update it with new descriptions. The new data feed is 250 MB and only contains the updated description field.
+>
+> Then the client should update the files by:
+> 1. Split the data feed into 3 files, each less than 100 MB.
+> 2. Select Settings under the original data feed file, and use a single upload to **update** (not replace) the data feed.
+> 3. Repeat for all 3 files.
 
 ## Support Fields
 ### Required
@@ -165,7 +175,6 @@ Steps of creating a product set are as follow.
 3. Click **建立組合** and choose whether to **Use Filter (使用篩選條件)** or **Manually Select Items (手動選擇商品)**.
 
 # Connect a Pixel to the Catalog
-Learn how to measure customer activity and use dynamic ads to deliver relevant items to people based on their interests, intent and actions.
 
 ## Required Standard Events and Parameters
 For dynamic ads to work properly, you must create and install a pixel. If possible, use **only one pixel per catalog and domain**. If you use more than one, we may not be able to accurately capture and optimize for the conversion events that you care the most about on iOS 14.5+ devices.
@@ -174,6 +183,8 @@ You need to add required events and parameters to your pixel code.
 ### Required Events
 For dynamic ads specifically, you must add the `ViewContent`, `AddToCart`  and `Purchase` standard events. These events help you understand when someone takes those particular actions.
 
+> `ViewContent`, `AddToCart` and `Purchase` are must-included standard events.
+
 It isn't necessary to include `ViewContent`, `AddToCart` and `Purchase` in the top eight events for dynamic ads to function, but the order of prioritization may affect reporting and performance. Prioritization determines which events are passed back for attribution that our system uses for reporting and delivery optimization, so **prioritize the events** you want to optimize and report on with dynamic ads. 
 
 ### Required Parameters
@@ -181,6 +192,8 @@ You’re required to include the `content_type` and either the `content_ids`�
 
 #### content_type
 You must set the value of `content_type` either to `product` or `product_group`.
+
+> `product`, not `products`; `product_group`, not `product_groups`. Typos can make events failed to received.
 
 If you set `product` as `content_type`, then the value of `content_ids` will map to the `id` field in your catalog.
 ```js

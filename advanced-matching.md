@@ -1,7 +1,7 @@
 # Advanced Matching for Websites
 
 # Introduction
-Advanced matching can help you optimize your Facebook ads to produce better results. With advanced matching for websites, you can send Facebook **hashed customer information** along with your pixel events, which can help you **attribute more conversions** and reach more people.
+Advanced matching can help you optimize your Facebook ads to produce better results. With advanced matching for websites, you can send Facebook **lowercase unhashed** or **normalized SHA-256 hashed data**, which can help you **attribute more conversions** and reach more people.
 
 You can only use advanced matching if people with **iOS 14.5+** devices **opt-in** on the Facebook or Instagram app on that device.
 
@@ -63,6 +63,10 @@ Once setup is complete, it may take **up to 48 hours** before you see results in
 2. Click the **Setting (設定)** tab.
 3. Toggle on **Automatic Advanced Matching (自動進階配對)** option to set up matching.
 4. Click **Show Options (顯示顧客資料參數)** to check and toggle those options.
+
+> Scenario: A non-technical advertiser wants to set up Advanced Matching for an existing pixel on their website to increase the conversion rate. The phone numbers of this advertiser's clients should not be used as part of the matching criteria.
+>
+> Then the advertiser can **enable automatic Advanced Matching** in Events Manager and **turn off the toggle** for the phone number.
 
 ## Manual Advanced Matching
 Use pixel base code to set up manual advanced matching.

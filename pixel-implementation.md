@@ -46,9 +46,12 @@ The code will be like:
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
   n.queue=[];t=b.createElement(e);t.async=!0; 
   t.src=v;s=b.getElementsByTagName(e)[0]; 
-  s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); 
+  s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+  // Be careful to check that pixel code is wrapped in <script> tags.
   fbq('init', '1218369535643821'); 
   fbq('track', 'PageView'); 
+  
 </script> 
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1218369535643821&ev=PageView&noscript=1" /></noscript>
 <!-- End Meta Pixel Code -->
@@ -56,6 +59,8 @@ The code will be like:
 - `1218369535643821`: pixel ID
 - `PageView`: the default event that the pixel base code fires. This default event is particularly important if you'd like to create custom conversions. When you filter or segment upon “Traffic URLs”,  it uses the URL value that it receives from this default event.
 - It can take up to 20 minutes for your pixel to become active and start working.
+
+> Note that if you use **Shopify** for your ecommerce business, you will never need to insert pixel code in your website. Shopify has a native integration with Meta pixel.  If the pixel is also coded, the pixel will fire twice almost every time a page is loaded.
 
 ## Pixel Helper
 [Facebook Pixel Helper](https://developers.facebook.com/docs/meta-pixel/support/pixel-helper), which is a Chrome extension, can help you verify that everything functions properly. Once you install this Chrome plugin, you're able to
@@ -133,6 +138,20 @@ If you want to change the events automatically configured for you by Facebook, y
 - Apply each event or conversion type based on the needs of your business.
 
 # Events and Parameters
+
+While implementing events, those functions should be placed between `<body></body>` tags of your website. They can be called either when the page loads or when a visitor completes an **action**, such as the click or tap of a button or visits to key pages along the marketing funnel.
+
+> For example, an ecommerce advertiser wants to start firing a pixel event when the user clicks `Add To Cart` button. The advertiser has already initialized the pixel code in this page and has been sending the PageView event. 
+>
+> Then the developer can write function as button's onClick event like this to start sending the `Add To Cart` pixel event.
+> ```
+> <button 
+>   id="addToCartButton"
+>   onClick="fbq('track', 'AddToCart', {currency: "USD", value: 30})">
+>   Add To Cart
+> </button>
+> ```
+
 ## Standard Events
 With standard events, you are able to
 - attribute: see in Ads Manager how many times the system measures behavior.
@@ -199,3 +218,13 @@ fbq('trackCustom', 'ShareDiscount', { promotion: 'share_discount_10' });
 You can initialize multiple pixels on one page for subsequent use.
 
 When there's a possibility that multiple pixels might interact on your page, you should use the `fbq('trackSingle')` or `fbq('trackSingleCustom')` and specify the pixel ID within it to yield accurate tracking.
+
+> Scenario: If there are two pixels in one page and the code looks like
+> ```
+> fbq('init', '1234');
+> fbq('track', 'PageView');
+> fbq('init', '5678');
+> fbq('track', 'Purchase');
+> ```
+>
+> Then the real behavior of pixels is: Pixel 1234 receives a PageView event. Both pixels receive a Purchase event.
