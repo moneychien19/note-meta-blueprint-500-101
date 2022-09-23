@@ -3,6 +3,13 @@
 - [Preparation Courses](https://www.facebookblueprint.com/student/collection/240330-500-101-facebook-certified-marketing-developer-preparation-courses)
 - [Business Manager](https://business.facebook.com)
 
+## Certification Process
+1. Complete all courses.
+2. Do practice exam.
+3. Start coding exercise. The exercise can accept 3 submissions, and if you fail, you can retake it within 30 days.
+4. Book the exam.
+5. Take the exam. It contains 45 questions and is limited in 90 minutes. If you fail, you can retake it after 5 days.
+
 ## Road Map
 ### Notes for Core Lessons
 - [Manage Assets and Permissions in Business Manager](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/business-manager.md)
@@ -15,3 +22,6 @@
 ### Mind Map
 - [Permalink](https://miro.com/app/board/uXjVPXotFXA=/?share_link_id=837443898094)
 - [PDF](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Mind%20Map.pdf)
+
+## Useful Materials
+- [Tutorial from DigiChops](https://www.youtube.com/watch?v=yXAP_sPVwgY&list=PL-MK2H4JMQRZUYf-ctjsAs4WSrWSsfYVn&index=1)
