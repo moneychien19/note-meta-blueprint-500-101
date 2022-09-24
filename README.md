@@ -25,3 +25,4 @@
 
 ## Useful Materials
 - [Tutorial from DigiChops](https://www.youtube.com/watch?v=yXAP_sPVwgY&list=PL-MK2H4JMQRZUYf-ctjsAs4WSrWSsfYVn&index=1)
+- [Meta Pixel Documentation](https://developers.facebook.com/docs/meta-pixel/)
