@@ -79,15 +79,15 @@ Key Advanced Matching Fields
 | User Data | Parameter | Format | Example |
 | - | - | - | - |
 | Email | em | string | 'johnsmith@test.com' |
-| Phone | ph | string | '0901119955' |
+| Phone | ph | number | 0901119955 |
 | External ID | external_id | string | '123abc' |
 | First Name | fn | string with all lowercase | 'john' |
 | Last Name | ln | string with all lowercase | 'smith' |
 | Gender | ge | 'm' or 'f' | 'm' |
-| Birthdate | db | string (yyyymmdd) | '19910526' |
+| Birthdate | db | number (yyyymmdd) | 19910526 |
 | City | ct | string | 'taipei' |
 | State / Province | st | string (2 letter code) | 'ca' |
-| Zip or Post Code | zp | string | '235' |
+| Zip or Post Code | zp | string | '94011' |
 | Country | country | string (2 letter code) | 'us' |
 
 Advanced Matching Code Example

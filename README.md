@@ -19,6 +19,9 @@
 - [Prepare and Setup Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog.md)
 - [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
 
+### Takeaway
+- [Takeaway for Coding Exercise](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/coding-exercise.md)
+
 ### Mind Map
 - [Permalink](https://miro.com/app/board/uXjVPXotFXA=/?share_link_id=837443898094)
 - [PDF](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Mind%20Map.pdf)
