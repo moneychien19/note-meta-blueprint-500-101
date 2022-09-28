@@ -197,7 +197,7 @@ You must set the value of `content_type` either to `product` or `product_grou
 
 If you set `product` as `content_type`, then the value of `content_ids` will map to the `id` field in your catalog.
 ```js
-fbq('track', 'AddtoCart', {
+fbq('track', 'AddToCart', {
 	value: 5.50,
 	currency: 'USD',
 	content_type: 'product',
@@ -207,7 +207,7 @@ fbq('track', 'AddtoCart', {
 
 If you set `product_group` as `content_type`, then the value of `content_ids` will map to the `item_group_id` field in your catalog.
 ```js
-fbq('track', 'AddtoCart', {
+fbq('track', 'AddToCart', {
 	value: 5.50,
 	currency: 'USD',
 	content_type: 'product_group',

@@ -23,7 +23,7 @@
 
 ## Send Events and Parameters
 4. On the page index.html, fire a `ViewContent` event. The user visited `index.html` to view more details of Casual Shoes. Please send a `ViewContent` event when the page is loaded and include parameters price and currency.
-  - Insert the code under `fbq('track', 'PageView');`
+  - Insert the code under `fbq('track', 'PageView');`.
   ```js
   fbq('track', 'ViewContent', {
     currency: 'EUR',
@@ -60,5 +60,37 @@
     onclick="trackLead()"
   >
     Submit
+  </button>
+  ```
+
+## Dynamic Ads
+7. When the product landing page is loaded, fire a standard event and include all 4 parameters for dynamic ads to match the product with the right content_ids, price and currency for dynamic ads.
+  - Insert the code under `fbq('track', 'PageView');`.
+  ```js
+  fbq('track', 'ViewContent', {
+    content_type: 'product',
+    content_ids: ['casual0'],  // given in problem
+    value: 49.99,  // given in problem
+    currency: 'USD'
+  });
+  ```
+
+8. When the `Add to Cart` button is clicked, fire a standard event and include all 4 parameters for dynamic ads to match the product with the right content_ids, price and currency for dynamic ads.
+  - Modify the button onclick event.
+  ```html
+  <button
+    type="button"
+    class="btn btn-success"
+    id="addtocart_btn"
+    onclick="
+      fbq('track', 'AddToCart', {
+        content_type: 'product',
+        content_ids: ['casual0'],
+        value: 49.99,
+        currency: 'USD'
+      });
+    "
+  >
+    Add To Cart
   </button>
   ```
