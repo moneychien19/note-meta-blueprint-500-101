@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Easy Shoes - Product Page</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '604500384704193', {
+        em: 'johnsmith@example.com',
+        fn: 'john',
+        ln: 'smith',
+        ct: 'menlopark',
+        st: 'ca'
+      });
+      fbq('track', 'PageView');
+      fbq('track', 'ViewContent', {
+        content_type: 'product',
+        content_ids: ['product5'],
+        value: 49.99,
+        currency: 'EUR',
+        content_category: 'Casual'
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=604500384704193&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <style>
+      body {
+        padding-top: 54px;
+      }
+
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+      
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+          <h1 class="my-4">Easy Shoes</h1>
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Casual</a>
+            <a href="#" class="list-group-item">Basketball</a>
+            <a href="#" class="list-group-item">Running</a>
+          </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+          <div class="card mt-4">
+            <img class="card-img-top img-fluid" src="https://cdn.pixabay.com/photo/2020/02/17/08/18/shoes-4855837_1280.png" alt="">
+            <div class="card-body">
+              <h3 class="card-title">Really Comfortable Shoes</h3>
+              <h4>&euro;49.99</h4>
+              <p class="card-text">Comfortable, casual sneakers!</p>
+              <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+              4.0 stars
+              <hr>
+              <button type="button" class="btn btn-success" id="purchase_btn" onclick="location.href = 'checkout.html';">Purchase</button>
+            </div>
+          </div>
+          <!-- /.card -->
+
+          <div class="card card-outline-secondary my-4">
+            <div class="card-header">
+              Product Reviews
+            </div>
+            <div class="card-body">
+              <p>These shoes are super comfortable!</p>
+              <small class="text-muted">Posted by Anonymous on 6/1/18</small>
+              <hr>
+              <p>Looks really nice!</p>
+              <small class="text-muted">Posted by Anonymous on 6/10/18</small>
+              <hr>
+            </div>
+          </div>
+          <!-- /.card -->
+
+          <div class="card card-outline-secondary my-4">
+            <div class="card-header">
+              Get Latest Offers!
+            </div>
+            <div class="card-body">
+            <form>
+              <div class="input-group">
+                <input type="email" class="form-control" size="50" placeholder="Email Address" required id="subscribe_input">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-success" id="subscribe_btn" onclick="fbq('track', 'CompleteRegistration');">Subscribe</button>
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Easy Shoes 2020</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

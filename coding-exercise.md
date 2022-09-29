@@ -1,7 +1,7 @@
 # Coding Exercise Key Knowledge
 
 ## Initial the Pixel
-1. Create a new pixel.
+1. Create a new pixel (in BM).
 2. Install the pixel code on your website for each page.
   - Insert the code between `head` tag on every page.
   ```html
