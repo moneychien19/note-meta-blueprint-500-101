@@ -12,7 +12,7 @@ Tools in Business Manager
 To setup Business Manager, you must use your personal Facebook account instead of create a new Facebook user. **(1 question)**
 
 To gain or grant access, you can follow the flow chart below. **(1 ~ 2 questions)**
-![Flow Chart of BM Access](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Flow%20Chart%20-%20BM%20access.jpg)
+![Flow Chart of BM Access](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/Flow%20Chart%20-%20BM%20access.jpg)
 
 Access layer
 - First layer: asset allocation
