@@ -19,12 +19,12 @@
 - [Prepare and Setup Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog.md)
 - [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
 
-## Coding Exercise (500-201)
+### Coding Exercise (500-201)
 - [Takeaway for Coding Exercise](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/coding-exercise.md)
 - [Real Problem Set](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Coding%20Exercise)
 
 
-## Exam (500-101)
+### Exam (500-101)
 - [Takeaway for Exam](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md)
 
 ### Mind Map

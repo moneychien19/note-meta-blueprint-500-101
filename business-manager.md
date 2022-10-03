@@ -10,11 +10,11 @@ With Business Manager, you can:
 ## Tools in Business Manager
 ### Ads Manager
 To create and manage ad campaigns, measure ad effectiveness, and test and track pixel performance.
+### Ad Accounts
+To run and manage ads, you must first create an ad account. Then ensure your clients add your account to their Business Manager.
 ### Commerce Manager
 To set up catalogs for products and create dynamic ads.
 ### Events Manager
-To set up catalogs for products and create dynamic ads.
-### Ad Accounts
 To see pixel event data, make sure events are set up properly, and fix pixel errors.
 
 ## When to Use Business Manager
