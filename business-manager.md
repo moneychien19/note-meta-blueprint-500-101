@@ -33,10 +33,10 @@ There are three ways to add assets to Business Manager:
 - Add an existing asset and claim ownership.
 
 ## Types of Assets
-- Ad accounts
-- Pages
+- **Ad accounts**
+- **Pages**
 - Instagram accounts
-- Pixels
+- **Pixels**
 - Offline events
 - Apps
 - Catalogs

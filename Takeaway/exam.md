@@ -1,18 +1,31 @@
-1. Why Use Business Manager
-  - To run ads on Facebook / Instagram.
-  - To grant or gain access to Facebook assets. **(1 ~ 2 questions)**
+## Business Manager
+#### Why Use Business Manager
+- To run ads on Facebook / Instagram.
+- To grant or gain access to Facebook assets. **(1 ~ 2 questions)**
 
-2. Tools in Business Manager
-  - Ad Account (廣告帳號): to purchase advertising on connected Pages or Facebook apps.
-  - [Ads Manager (廣告管理員)](https://business.facebook.com/adsmanager): to house all ad accounts and can have 25 associated users.
-  ![Ads Manager](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/ads%20manager.png)
-  - [Events Manager (事件管理工具)](https://business.facebook.com/events_manager2): central view of all events in your website.
-  ![Events Manager](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/events%20manager.png)
-  - [Commerce Manager (商務管理工具)](https://business.facebook.com/commerce/): to manage **catalog** and **dynamic ads**.
-  ![Commerce Manager](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/commerce%20manager.png)
+#### Tools in Business Manager
+- Ad Account (廣告帳號): to purchase advertising on connected Pages or Facebook apps.
+- [Ads Manager (廣告管理員)](https://business.facebook.com/adsmanager): to house all **ad accounts** and can have 25 associated users.
+<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/ads%20manager.png" alt="ads manager" width="200"/>
+- [Events Manager (事件管理工具)](https://business.facebook.com/events_manager2): central view of all events (including **pixels** and **conversions**) in your website.
+<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/events%20manager.png" alt="events manager" width="200"/>
+- [Commerce Manager (商務管理工具)](https://business.facebook.com/commerce/): to manage **catalog** and **dynamic ads**.
+<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/commerce%20manager.png" alt="commerce manager" width="200"/>
 
 To setup Business Manager, you must use your personal Facebook account instead of create a new Facebook user. **(1 question)**
 
+#### Assets
+- Add Pages (粉絲專頁) to BM.
+  - You must be an **admin on a Page** for more than **7 days**.
+  - You must be **admin** in the Business Manager.
+- Add pixels (像素) to
+  - ad account: limit to **1**.
+  - Business Manager: limit to **100**, and you must be **admin** in the Business Manager.
+- Add ad accounts (廣告帳號) to BM.
+  - You can add up to **25** ad accounts.
+  - You can only add prepaid ad accounts to Business Managers if they're from certain locations.
+  - You can't add an ad account which has already been added to another BM.
+  
 To gain or grant access, you can follow the flow chart below. **(1 ~ 2 questions)**
 ![Flow Chart of BM Access](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/Flow%20Chart%20-%20BM%20access.jpg)
 
