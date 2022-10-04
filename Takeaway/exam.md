@@ -6,11 +6,11 @@
 ### Tools in Business Manager
 - Ad Account (廣告帳號): to purchase advertising on connected Pages or Facebook apps.
 - [Ads Manager (廣告管理員)](https://business.facebook.com/adsmanager): to house all **ad accounts** and can have **25** associated users.
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/ads%20manager.png" alt="ads manager" width="600" style="marginTop: 6;"/>
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/ads%20manager.png" alt="ads manager" width="500" style="marginTop: 12;"/>
 - [Events Manager (事件管理工具)](https://business.facebook.com/events_manager2): central view of all events (including **pixels** and **conversions**) in your website.
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/events%20manager.png" alt="events manager" width="600" style="marginTop: 6;"/>
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/events%20manager.png" alt="events manager" width="500" style="marginTop: 12;"/>
 - [Commerce Manager (商務管理工具)](https://business.facebook.com/commerce/): to manage **catalog** and **dynamic ads**.
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/commerce%20manager.png" alt="commerce manager" width="600" style="marginTop: 6;"/>
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/commerce%20manager.png" alt="commerce manager" width="500" style="marginTop: 12;"/>
 
 ### Assets
 To setup Business Manager, you must use your **personal Facebook account** instead of create a new Facebook user. **(1 question)**
@@ -37,7 +37,7 @@ To setup Business Manager, you must use your **personal Facebook account** inste
   > Khadija, a marketing developer at Little Lemon, needs to share some of her assets in Business Manager with a consultant. How should Khadija add him to the Little Lemon Business Manager, so he can access these assets? Add the consultant as a partner.
 
 - Determine what to do to gain or grant access, follow the flow chart below. **(1 ~ 2 questions)**
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/Flow%20Chart%20-%20BM%20access.jpg" alt="Flow Chart of BM Access" width="1000" style="marginTop: 6;"/>
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/Flow%20Chart%20-%20BM%20access.jpg" alt="Flow Chart of BM Access" width="800" style="marginTop: 6;"/>
 - Access layer
   - **First layer: asset allocation**
     - Assign `people` the role of either employee or admin.
@@ -53,17 +53,6 @@ Setup Ad Accounts
 - Ad account access can be shared both internally and externally.
 - Business Manager should be owned by a party.
 
-Hashing
-1. Data is hashed by SHA-256 before being sent to Facebook.
-2. After the match process, Facebook deletes all the individual data. **(1 question)**
-> Is the data being sent to Facebook secure? Yes, it is secure by hashed.
->
-> When do you hash or normalize data? Always.
-> - Hashing: It just depends whether you hash it manually or it's done automatically from Facebook. If you use `fbq()`, data is hashed automatically, but if you use `<img>` tags, you need to hash it.
-> - Normalize: It just means follow specific formats such as removing spaces or lowercasing.
->
-> Do login or financial data from the page get sent to Facebook? No.
-
 ## Pixel
 
 ### Possible Conversion Goals
@@ -72,34 +61,56 @@ Hashing
 - Amount of newly registration.
 
 ### Hash
-Data sent to Facebook is always hashed using SHA-256.
-<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/hash.png" alt="hash process" width="1000" style="marginTop: 6;"/>
+1. Data is hashed by SHA-256 before being sent to Facebook.
+2. Facebook will match the hash data and their own hash data. Once they've matched, they create aggregated view of that data and pass into Events Manager.
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/hash.png" alt="hash process" width="800" style="marginTop: 12;"/>
+3. After the match process, Facebook deletes all the individual data. **(1 question)**
 
-> Do Facebook keep data after the match process? No. Facebook deletes all the individual data, but only keep the aggregated view that you can see in Events Manager.
-> Do login and financial data from the page get sent to Facebook? No.
+> Is the data being sent to Facebook secure? Yes, it is secure by hashed.
+>
+> When do you hash or normalize data? Always.
+> - Hashing: It just depends whether you hash it manually or it's done automatically from Facebook. If you use `fbq()`, data is hashed automatically, but if you use `<img>` tags, you need to hash it.
+> - Normalize: It just means follow specific formats such as removing spaces or lowercasing.
+>
+> Do login or financial data from the page get sent to Facebook? No.
 
 ### Pixel Code
-- Base code: installed on all pages to provide baseline measurement (usually with `PageView` event).
-  ```html
-  <script> 
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
-    n.queue=[];t=b.createElement(e);t.async=!0; 
-    t.src=v;s=b.getElementsByTagName(e)[0]; 
-    s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+#### Base Code
+Installed on all pages to provide baseline measurement (usually with `PageView` event).
+```html
+<script> 
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
+  n.queue=[];t=b.createElement(e);t.async=!0; 
+  t.src=v;s=b.getElementsByTagName(e)[0]; 
+  s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '{your-pixel-id}'); 
-    fbq('track', 'PageView'); 
-    
-  </script> 
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={your-pixel-id}&ev=PageView&noscript=1" /></noscript>
-  ```
-  - The pixel code is always placed within open and close **header tags**. **(1 question)**
-  - The pixel code contains Javascript and no-Javascript parts. **(1 ~ 2 questions)**
-  - By default it starts capturing HTTP data and the on-page metadata.
-- Event code: added to base code and used on specific page to track events. For example, `AddToCart` or `Purchase` event.
+  fbq('init', '{your-pixel-id}'); 
+  fbq('track', 'PageView'); 
+  
+</script> 
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={your-pixel-id}&ev=PageView&noscript=1" /></noscript>
+```
+- The code is always placed within open and close **header tags**. **(1 question)**
+- The code contains Javascript and no-Javascript parts. **(1 ~ 2 questions)**
+- By default it starts capturing HTTP data and the on-page metadata.
 > Should pixel be included on all pages? Yes, basic code should be included on all pages.
+#### Event Code
+Added to base code and used on specific page to track events. For example, `AddToCart` or `Purchase` event.
+
+### Target More specifically
+If you want to target more specifically, consider using **custom parameters**, **custom events**, or **URL-based custom conversion**.
+#### Custom Parameters (Use This First)
+By putting the details on the standard event, we can get reporting the types of people we're converting for. This can be used in the whole customer journey.
+
+#### Custom Events
+By defining custom events, all stages except the final conversion stage in the journey can be used. The disadvantage is that custom events can't be optimized.
+
+#### URL-based Custom Conversions
+Create a custom conversion against a specific page means that everyone lands on the page will fire a conversion event. This can be used in the final stage, that is conversion.
+
+<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/customer%20journey.png" alt="hash process" width="800" style="marginTop: 12;"/>
 
 ## Advanced Matching
 ### Fields
@@ -114,7 +125,7 @@ Data sent to Facebook is always hashed using SHA-256.
 | Birthdate | db | number (yyyymmdd) | 19910526 |
 | City | ct | string | 'taipei' |
 | State / Province | st | string (2 letter code) | 'ca' |
-| Zip or Post Code | zp | string | '94011' |
+| Zip or Post Code | zp | number | 94011 |
 | Country | country | string (2 letter code) | 'us' |
 
 ### Advanced Matching Code Example
