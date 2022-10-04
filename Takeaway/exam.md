@@ -5,7 +5,7 @@
 
 ### Tools in Business Manager
 - Ad Account (廣告帳號): to purchase advertising on connected Pages or Facebook apps.
-- [Ads Manager (廣告管理員)](https://business.facebook.com/adsmanager): to house all **ad accounts** and can have 25 associated users.
+- [Ads Manager (廣告管理員)](https://business.facebook.com/adsmanager): to house all **ad accounts** and can have **25** associated users.
   <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/ads%20manager.png" alt="ads manager" width="600" style="marginTop: 6;"/>
 - [Events Manager (事件管理工具)](https://business.facebook.com/events_manager2): central view of all events (including **pixels** and **conversions**) in your website.
   <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/events%20manager.png" alt="events manager" width="600" style="marginTop: 6;"/>
@@ -53,11 +53,6 @@ Setup Ad Accounts
 - Ad account access can be shared both internally and externally.
 - Business Manager should be owned by a party.
 
-Possible Conversion Goals
-- Amount of item sold.
-- Total value of item sold.
-- Amount of newly registration.
-
 Hashing
 1. Data is hashed by SHA-256 before being sent to Facebook.
 2. After the match process, Facebook deletes all the individual data. **(1 question)**
@@ -69,13 +64,22 @@ Hashing
 >
 > Do login or financial data from the page get sent to Facebook? No.
 
-Pixel has two parts:
-- Base code: installed on all pages to provide baseline measurement (usually with `PageView` event).
-- Event code: added to base code and used on specific page to track events. For example, `AddToCart` or `Purchase` event.
-> Should pixel be included on all pages? Yes, basic code should be included on all pages.
+## Pixel
 
-Base Code
-- The code will be like:
+### Possible Conversion Goals
+- Amount of item sold.
+- Total value of item sold.
+- Amount of newly registration.
+
+### Hash
+Data sent to Facebook is always hashed using SHA-256.
+<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/hash.png" alt="hash process" width="1000" style="marginTop: 6;"/>
+
+> Do Facebook keep data after the match process? No. Facebook deletes all the individual data, but only keep the aggregated view that you can see in Events Manager.
+> Do login and financial data from the page get sent to Facebook? No.
+
+### Pixel Code
+- Base code: installed on all pages to provide baseline measurement (usually with `PageView` event).
   ```html
   <script> 
     !function(f,b,e,v,n,t,s)
@@ -91,11 +95,14 @@ Base Code
   </script> 
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={your-pixel-id}&ev=PageView&noscript=1" /></noscript>
   ```
-- The pixel code is always placed within open and close header tags. **(1 question)**
-- The pixel code contains Javascript and no-Javascript parts. **(1 ~ 2 questions)**
-- By default it starts capturing HTTP data and the on-page metadata.
+  - The pixel code is always placed within open and close **header tags**. **(1 question)**
+  - The pixel code contains Javascript and no-Javascript parts. **(1 ~ 2 questions)**
+  - By default it starts capturing HTTP data and the on-page metadata.
+- Event code: added to base code and used on specific page to track events. For example, `AddToCart` or `Purchase` event.
+> Should pixel be included on all pages? Yes, basic code should be included on all pages.
 
-Key Advanced Matching Fields
+## Advanced Matching
+### Fields
 | User Data | Parameter | Format | Example |
 | - | - | - | - |
 | Email | em | string | 'johnsmith@test.com' |
@@ -110,7 +117,7 @@ Key Advanced Matching Fields
 | Zip or Post Code | zp | string | '94011' |
 | Country | country | string (2 letter code) | 'us' |
 
-Advanced Matching Code Example
+### Advanced Matching Code Example
 - Javascript
   ```js
   fbq('init', '123456789', {
@@ -133,14 +140,15 @@ Advanced Matching Code Example
   <!-- parameters should be hashed manually -->
   ``` 
 
-Required Events for Dynamic Ads
+## Catalog and Dynamic Ads
+### Required Events
 | Event Name | Required Parameters |
 | - | - |
 | `ViewContent` | `content_type`, `contents`/`content_ids` |
 | `AddToCart` | `content_type`, `contents`/`content_ids` |
 | `Purchase` | `content_type`, `contents`/`content_ids`, `currency`, `value` |
 
-Manage Catalog
+### Manage Catalog
 - Add manually
 - Bulk upload
 - Facebook pixel: If a product hasn't been viewed, it won't ever be entered the catalog.
@@ -150,7 +158,7 @@ Manage Catalog
 | Small Inventory | Add Manually | Bulk Upload + Scheduled Feed | Facebook Pixel |
 | Medium to Large Inventory | Add Manually + Bulk Upload | Bulk Upload + Scheduled Feed | Facebook Pixel |
 
-Troubleshoot Catalog & Dynamic Ads
+## Troubleshoot Catalog & Dynamic Ads
 - Not seeing any data within catalog / low catalog match rate / audience size drop.
   - The catalog and pixel aren't linked.
   - `content_ids` from the pixel don't match ids in catalog.
