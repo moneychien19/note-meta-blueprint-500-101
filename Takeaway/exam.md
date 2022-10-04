@@ -1,52 +1,57 @@
 ## Business Manager
-#### Why Use Business Manager
+### Why Use Business Manager
 - To run ads on Facebook / Instagram.
 - To grant or gain access to Facebook assets. **(1 ~ 2 questions)**
 
-#### Tools in Business Manager
+### Tools in Business Manager
 - Ad Account (廣告帳號): to purchase advertising on connected Pages or Facebook apps.
 - [Ads Manager (廣告管理員)](https://business.facebook.com/adsmanager): to house all **ad accounts** and can have 25 associated users.
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/ads%20manager.png" alt="ads manager" width="600"/>
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/ads%20manager.png" alt="ads manager" width="600" style="marginTop: 6;"/>
 - [Events Manager (事件管理工具)](https://business.facebook.com/events_manager2): central view of all events (including **pixels** and **conversions**) in your website.
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/events%20manager.png" alt="events manager" width="600"/>
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/events%20manager.png" alt="events manager" width="600" style="marginTop: 6;"/>
 - [Commerce Manager (商務管理工具)](https://business.facebook.com/commerce/): to manage **catalog** and **dynamic ads**.
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/commerce%20manager.png" alt="commerce manager" width="600"/>
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/commerce%20manager.png" alt="commerce manager" width="600" style="marginTop: 6;"/>
 
-To setup Business Manager, you must use your personal Facebook account instead of create a new Facebook user. **(1 question)**
-
-#### Assets
-- Add Pages (粉絲專頁) to BM.
+### Assets
+To setup Business Manager, you must use your **personal Facebook account** instead of create a new Facebook user. **(1 question)**
+#### Pages (粉絲專頁)
+- Add Pages to BM.
   - You must be an **admin on a Page** for more than **7 days**.
   - You must be **admin** in the Business Manager.
-- Add pixels (像素) to
-  - ad account: limit to **1**.
-  - Business Manager: limit to **100**, and you must be **admin** in the Business Manager.
-- Add ad accounts (廣告帳號) to BM.
+#### Pixels (像素)
+- Add pixels to BM.
+  - The amount is limited to **100**.
+  - You must be **admin** in the BM.
+- Add pixels in ad account.
+  - The amount is limited to **1**.
+- Once pixel is created, it cannot be deleted, it can only be repurposed.
+  > What do you do with a pixel when you no longer need it? Remove the code from your website and that will make it stop sending data.
+#### Ad Accounts (廣告帳號)
+- Add ad accounts to BM.
   - You can add up to **25** ad accounts.
   - You can only add prepaid ad accounts to Business Managers if they're from certain locations.
   - You can't add an ad account which has already been added to another BM.
   
-To gain or grant access, you can follow the flow chart below. **(1 ~ 2 questions)**
-![Flow Chart of BM Access](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/Flow%20Chart%20-%20BM%20access.jpg)
+### Access
+- There are `people` (employee/admin), `partner`, and `system user` three types of users in BM.
+  > Khadija, a marketing developer at Little Lemon, needs to share some of her assets in Business Manager with a consultant. How should Khadija add him to the Little Lemon Business Manager, so he can access these assets? Add the consultant as a partner.
 
-Access layer
-- First layer: asset allocation
-  - For example, there are two admin of Business Manager, one can access to Ad Manager 1, whereas one can access to Ad Manager 1, 2, and 3. Just because they are both admin doesn't mean that they can both access to all assets under the Business Manager.
-- Second layer: asset control
-  - For example, an analyst doesn't need to manage campaigns.
+- Determine what to do to gain or grant access, follow the flow chart below. **(1 ~ 2 questions)**
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/Flow%20Chart%20-%20BM%20access.jpg" alt="Flow Chart of BM Access" width="1000" style="marginTop: 6;"/>
+- Access layer
+  - **First layer: asset allocation**
+    - Assign `people` the role of either employee or admin.
+    - For example, there are two admin of Business Manager, one can access to Ad Manager 1, whereas one can access to Ad Manager 1, 2, and 3. Just because they are both admin doesn't mean that they can both access to all assets under the Business Manager.
+  - **Second layer: asset control**
+    - Limit each people's access to assets.
+    - Each asset are divided into two categories, **standard access** and **admin access**.
+    - For example, an analyst doesn't need to manage campaigns.
 
 Setup Ad Accounts
 - At least one person has been authorized to run ads.
 - Each ad account needs an associated payment method.
 - Ad account access can be shared both internally and externally.
 - Business Manager should be owned by a party.
-
-There are limited amount of pixels in Business Manager and Ad Account:
-- Business Manager: 100,
-- Ad Account: 1,
-
-and once pixel is created, it cannot be deleted, it can only be repurposed.
-> What do you do with a pixel when you no longer need it? Remove the code from your website and that will make it stop sending data.
 
 Possible Conversion Goals
 - Amount of item sold.
