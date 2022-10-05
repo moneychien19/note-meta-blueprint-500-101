@@ -113,10 +113,25 @@ Create a custom conversion against a specific page means that everyone lands on 
 <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/customer%20journey.png" alt="hash process" width="800" style="marginTop: 12;"/>
 
 ## Advanced Matching
+
+Advanced matching helps to match users more accurately by passing additional hashed information such as email, phone, gender, or location.
+
+### Methods
+#### Automatic
+- Go to Events Manager > Pixel > Setting and toggle on advanced matching parameters.
+- The change will take 48 hours to see the result.
+- Rules
+  - JavaScript only, and must have base code already implemented on the website.
+  - No iFrame.
+  - Not sensitive customer businesses such as health and finance.
+#### Manual
+- Can use under JavaScript and no-Javascript, no-iFrame and iFrame circumstances. Can use on regulated businesses.
+- Required developers.
+
 ### Fields
 | User Data | Parameter | Format | Example |
 | - | - | - | - |
-| Email | em | string | 'johnsmith@test.com' |
+| Email | em | string/hashed value | 'johnsmith@test.com' |
 | Phone | ph | number | 0901119955 |
 | External ID | external_id | string | '123abc' |
 | First Name | fn | string with all lowercase | 'john' |
@@ -125,7 +140,7 @@ Create a custom conversion against a specific page means that everyone lands on 
 | Birthdate | db | number (yyyymmdd) | 19910526 |
 | City | ct | string | 'taipei' |
 | State / Province | st | string (2 letter code) | 'ca' |
-| Zip or Post Code | zp | number | 94011 |
+| Zip or Post Code | zp | string | '94011' |
 | Country | country | string (2 letter code) | 'us' |
 
 ### Advanced Matching Code Example
@@ -135,10 +150,10 @@ Create a custom conversion against a specific page means that everyone lands on 
     em: 'email@email.com', 
     fn: 'john', 
     ln: 'smith',
-    ph: '0901119955',
+    ph: 0901119955,
     external_id: 'js123456',
     ge: 'm',
-    db: '19910526',
+    db: 19910526,
     ct: 'menlopark',
     st: 'ca',
     zp: '94025',
@@ -153,16 +168,40 @@ Create a custom conversion against a specific page means that everyone lands on 
 
 ## Catalog and Dynamic Ads
 ### Required Events
+By passing the three events, the pixel and the catalog are able to link viewed product with a user profile.
+
 | Event Name | Required Parameters |
 | - | - |
 | `ViewContent` | `content_type`, `contents`/`content_ids` |
 | `AddToCart` | `content_type`, `contents`/`content_ids` |
 | `Purchase` | `content_type`, `contents`/`content_ids`, `currency`, `value` |
+#### content_type
+Can be **product** or **product_group**.
+- When `content_type: 'product'`, ID being passed into contents/content_ids should be **IDs of product**.
+- When `content_type: 'product_group'`, ID being passed into contents/content_ids should be **IDs of product group**.
+
+#### contents/content_ids
+```js
+// content_ids
+fbq('track', 'Purchase', {
+  content_ids: ['ABC123', 'CDE234'],
+  content_type: 'product'
+});
+// contents
+fbq('track', 'Purchase', {
+  contents: [
+    { id: 'ABC123', quantity: 1 }, 
+    { id: 'CDE234', quantity: 2 }
+  ],
+  content_type: 'product'
+});
+```
 
 ### Manage Catalog
-- Add manually
-- Bulk upload
-- Facebook pixel: If a product hasn't been viewed, it won't ever be entered the catalog.
+#### Add manually
+#### Bulk upload
+#### Facebook pixel
+Import the details of the product automatically by scraping the data off the product page, and the scrap only happen when a visitor visits the product. **If a product hasn't been viewed, it won't ever be entered the catalog.**
 
 | | Not Change Often | Change Daily/Weekly | Change More Than Daily or Realtime |
 | - | - | - | - |
