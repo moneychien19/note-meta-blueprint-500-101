@@ -209,13 +209,42 @@ Import the details of the product automatically by scraping the data off the pro
 | Medium to Large Inventory | Add Manually + Bulk Upload | Bulk Upload + Scheduled Feed | Facebook Pixel |
 
 ## Troubleshoot Catalog & Dynamic Ads
-- Not seeing any data within catalog / low catalog match rate / audience size drop.
-  - The catalog and pixel aren't linked.
-  - `content_ids` from the pixel don't match ids in catalog.
-  - Not all items on the website are included in the catalog.
--  Feed upload isn't updating catalog.
-  - File/feed size is too big.
-- Ads showing repetitive ads of the same item but in different colors.
-  - Add `item_group_id` column.
-- Sudden decrease in campaign performance.
-  - Items are sold out but aren't updated in catalog, therefore they are still shown. Increase frequency of feed upload and update to fix this.
+#### Not seeing any data within catalog / **low catalog match rate** / audience size drop.
+- The catalog and pixel aren't linked.
+- `content_ids` from the pixel don't match ids in catalog.
+- Not all items on the website are included in the catalog.
+#### Feed upload isn't updating catalog.
+- File/feed size is too big.
+#### Ads showing repetitive ads of the same item but in different colors.
+- Add `item_group_id` column.
+#### Sudden decrease in campaign performance.
+- Items are sold out but aren't updated in catalog, therefore they are still shown. **Increase frequency of feed upload** and update to fix this.
+
+#### Business has multiple markets or languages.
+- Set up one pixel per market/language.
+
+## Troubleshoot Pixels
+### Common Pixel Setup Mistakes
+#### `contents: [{ id: 'ABC123' }, { id: 'CDE234' }]`
+- Missing `quantity` property in each product object.
+#### `content_type: 'soap'`
+- Content type should be either `product` or `product_group`.
+#### `content_category` vs. `content_type`
+- `content_category` can be any string you want, but `content_type` can only be either `product` or `product_group`.
+#### `value: 5000,000`
+- Wrong format, value can contain decimal point but no comma.
+#### `currency: $`
+- We never use the `$` symbol, use three letter code such as `USD`.
+
+### Troubleshoot Tools
+#### Pixel Helper
+- Are pixels firing correctly with the correct parameters?
+#### Events Manager
+- Are pixel events reaching BM account?
+#### Facebook Debug Tools
+- [Product Catalog Debug Tool](https://business.facebook.com/ads/microdata/debug): check if metadata in a website be correctly setup.
+- [Retargeting Pixel Debug Tool](https://business.facebook.com/ads/retargeting_pixel/debug/): check if the catalog is associated with pixel.
+  1. Show a list of catalog.
+  2. Show a chart with types of standard events and their counts. You should see a full set of standard events (`ViewContent`, `AddToCart` and `Purchase`).
+#### Chrome DevTools
+- See all data being passed to Facebook.
