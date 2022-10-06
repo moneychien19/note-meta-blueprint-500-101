@@ -18,6 +18,7 @@
 - [Advanced Matching for Websites](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/advanced-matching.md)
 - [Prepare and Setup Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog.md)
 - [Troubleshoot Catalog for Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/dynamic-ads-catalog-troubleshoot.md)
+- [Impact of iOS 14.5+ on Certified Marketing Developer Collection](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/ios-14.5-impact.md)
 
 ### Coding Exercise (500-201)
 - [Takeaway for Coding Exercise](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/coding-exercise.md)
