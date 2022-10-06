@@ -1,3 +1,25 @@
+## Road Map
+- [Business Manager](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#business-manager)
+  - Tools
+  - Assets
+  - Access
+- [Pixel](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#pixel)
+  - Hash
+  - Pixel Code
+  - Events
+  - Parameters
+- [Advanced Matching](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#advanced-matching)
+  - Methods: manual/automatic
+  - Advanced Matching Code
+  - Fields
+- [Catalog and Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#catalog-and-dynamic-ads)
+  - Required Events
+  - Methods: manual/bulk upload/pixel
+- [Troubleshoot Catalog & Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#troubleshoot-catalog--dynamic-ads)
+- [Troubleshoot Pixels](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#troubleshoot-pixels)
+  - Common Mistakes
+  - Troubleshoot Tools
+
 ## Business Manager
 ### Why Use Business Manager
 - To run ads on Facebook / Instagram.
@@ -31,6 +53,11 @@ To setup Business Manager, you must use your **personal Facebook account** inste
   - You can add up to **25** ad accounts.
   - You can only add prepaid ad accounts to Business Managers if they're from certain locations.
   - You can't add an ad account which has already been added to another BM.
+- Setup Ad Accounts
+  - At least one person has been authorized to run ads.
+  - Each ad account needs an associated payment method.
+  - Ad account access can be shared both internally and externally.
+  - Business Manager should be owned by a party.
   
 ### Access
 - There are `people` (employee/admin), `partner`, and `system user` three types of users in BM.
@@ -46,12 +73,6 @@ To setup Business Manager, you must use your **personal Facebook account** inste
     - Limit each people's access to assets.
     - Each asset are divided into two categories, **standard access** and **admin access**.
     - For example, an analyst doesn't need to manage campaigns.
-
-Setup Ad Accounts
-- At least one person has been authorized to run ads.
-- Each ad account needs an associated payment method.
-- Ad account access can be shared both internally and externally.
-- Business Manager should be owned by a party.
 
 ## Pixel
 
