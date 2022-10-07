@@ -220,7 +220,7 @@ You can initialize multiple pixels on one page for subsequent use.
 When there's a possibility that multiple pixels might interact on your page, you should use the `fbq('trackSingle')` or `fbq('trackSingleCustom')` and specify the pixel ID within it to yield accurate tracking.
 
 > Scenario: If there are two pixels in one page and the code looks like
-> ```
+> ```js
 > fbq('init', '1234');
 > fbq('track', 'PageView');
 > fbq('init', '5678');
@@ -228,3 +228,11 @@ When there's a possibility that multiple pixels might interact on your page, you
 > ```
 >
 > Then the real behavior of pixels is: Pixel 1234 receives a PageView event. Both pixels receive a Purchase event.
+>
+> The code can be fixed by using
+> ```js
+> fbq('init', '1234');
+> fbq('init', '5678');
+> fbq('track', 'PageView');
+> fbq('trackSingle', '5678', 'Purchase');
+> ```

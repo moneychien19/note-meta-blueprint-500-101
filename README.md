@@ -27,6 +27,7 @@
 
 ### Exam (500-101)
 - [Takeaway for Exam](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md)
+- [Notes for Meta Pixel Documentation](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/note-documentation.md)
 
 ### Mind Map
 - [Permalink](https://miro.com/app/board/uXjVPXotFXA=/?share_link_id=837443898094)
