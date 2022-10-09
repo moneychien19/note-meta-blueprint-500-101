@@ -19,6 +19,7 @@
 - [Troubleshoot Pixels](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#troubleshoot-pixels)
   - Common Mistakes
   - Troubleshoot Tools
+- [Useful Links to Ducumentation](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#useful-links-to-documentation)
 
 ## Business Manager
 ### Why Use Business Manager
@@ -76,6 +77,14 @@ To setup Business Manager, you must use your **personal Facebook account** inste
 
 ## Pixel
 
+The Meta Pixel can collect the following data:
+
+- Http Headers – Anything present in HTTP headers. HTTP Headers are a standard web protocol sent between any browser request and any server on the internet. HTTP Headers include **IP addresses**, information about the **web browser**, **page location**, **document**, **referrer** and **person using the website**.
+- Pixel-specific Data – Includes **Pixel ID** and the **Facebook Cookie**.
+- Button Click Data – Any buttons clicked by site visitors, the labels of those buttons and any pages visited as a result of the button clicks.
+- Optional Values – Developers and marketers can optionally choose to send additional information about the visit through Custom Data events
+- Form Field Names – Includes website field names like email, address, quantity, etc., for when you purchase a product or service. The field values are captured only when you include them as part of **Advanced Matching** or optional values.
+
 ### Possible Conversion Goals
 - Amount of item sold.
 - Total value of item sold.
@@ -113,10 +122,14 @@ Installed on all pages to provide baseline measurement (usually with `PageView` 
 </script> 
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={your-pixel-id}&ev=PageView&noscript=1" /></noscript>
 ```
-- The code is always placed within open and close **header tags**. **(1 question)**
+- When run, the base code will download a library of functions which you can then **use for conversion tracking**. It also automatically tracks a single `PageView` conversion by calling the fbq() function each time it loads.
+- The code is always placed within open and close **header tags**. To do so,
+  - it **reduces** the chances of browsers or third-party **code blocking** the Pixel's execution.
+  - it executes the code sooner, **increasing the chance** that your visitors **are tracked** before they leave your page.
 - The code contains Javascript and no-Javascript parts. **(1 ~ 2 questions)**
 - By default it starts capturing HTTP data and the on-page metadata.
 > Should pixel be included on all pages? Yes, basic code should be included on all pages.
+
 #### Event Code
 Added to base code and used on specific page to track events. For example, `AddToCart` or `Purchase` event.
 
@@ -125,11 +138,19 @@ If you want to target more specifically, consider using **custom parameters**, *
 #### Custom Parameters (Use This First)
 By putting the details on the standard event, we can get reporting the types of people we're converting for. This can be used in the whole customer journey.
 
+Custom parameters can be used in both standard and custom events.
+
 #### Custom Events
 By defining custom events, all stages except the final conversion stage in the journey can be used. The disadvantage is that custom events can't be optimized.
+- **Support parameters**.
+- Use `fbq('track')` anywhere in your website **between `<body>` tags** to track standard events.
+- Custom events' name are limited in 50 characters.
 
 #### URL-based Custom Conversions
-Create a custom conversion against a specific page means that everyone lands on the page will fire a conversion event. This can be used in the final stage, that is conversion.
+- The default `PageView` event record the **referrer URL** of the page. Therefore you can setup a custom conversions that tracks website visitors who have viewed a specific URL. This can be used in the final stage, that is conversion.
+- Once tracked, custom conversions can be used to **optimize** your ad campaigns, to **define custom audiences**, and to **further refine custom audiences** that rely on standard or custom events.
+- Create custom conversions in Events Manager.
+- The maximum number of custom conversions **per ad account** is **100**.
 
 <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/customer%20journey.png" alt="hash process" width="800" style="marginTop: 12;"/>
 
@@ -269,3 +290,7 @@ Import the details of the product automatically by scraping the data off the pro
   2. Show a chart with types of standard events and their counts. You should see a full set of standard events (`ViewContent`, `AddToCart` and `Purchase`).
 #### Chrome DevTools
 - See all data being passed to Facebook.
+
+## Useful Links to Documentation
+- [Full list of standard events](https://developers.facebook.com/docs/meta-pixel/reference#standard-events)
+- [Event parameters](https://developers.facebook.com/docs/meta-pixel/reference#object-properties)
