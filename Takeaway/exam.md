@@ -13,8 +13,8 @@
   - Advanced Matching Code
   - Fields
 - [Catalog and Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#catalog-and-dynamic-ads)
-  - Required Events
   - Methods: manual/bulk upload/pixel
+  - Required Events
 - [Troubleshoot Catalog & Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#troubleshoot-catalog--dynamic-ads)
 - [Troubleshoot Pixels](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#troubleshoot-pixels)
   - Common Mistakes
@@ -24,7 +24,7 @@
 ## Business Manager
 ### Why Use Business Manager
 - To run ads on Facebook / Instagram.
-- To grant or gain access to Facebook assets. **(1 ~ 2 questions)**
+- To grant or gain access to Facebook assets.
 
 ### Tools in Business Manager
 - Ad Account (廣告帳號): to purchase advertising on connected Pages or Facebook apps.
@@ -36,7 +36,7 @@
   <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/commerce%20manager.png" alt="commerce manager" width="500" style="marginTop: 12;"/>
 
 ### Assets
-To setup Business Manager, you must use your **personal Facebook account** instead of create a new Facebook user. **(1 question)**
+To setup Business Manager, you must use your **personal Facebook account** instead of create a new Facebook user.
 #### Pages (粉絲專頁)
 - Add Pages to BM.
   - You must be an **admin on a Page** for more than **7 days**.
@@ -64,7 +64,7 @@ To setup Business Manager, you must use your **personal Facebook account** inste
 - There are `people` (employee/admin), `partner`, and `system user` three types of users in BM.
   > Khadija, a marketing developer at Little Lemon, needs to share some of her assets in Business Manager with a consultant. How should Khadija add him to the Little Lemon Business Manager, so he can access these assets? Add the consultant as a partner.
 
-- Determine what to do to gain or grant access, follow the flow chart below. **(1 ~ 2 questions)**
+- Determine what to do to gain or grant access, follow the flow chart below.
   <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/Flow%20Chart%20-%20BM%20access.jpg" alt="Flow Chart of BM Access" width="800" style="marginTop: 6;"/>
 - Access layer
   - **First layer: asset allocation**
@@ -93,16 +93,16 @@ The Meta Pixel can collect the following data:
 ### Hash
 1. Data is hashed by SHA-256 before being sent to Facebook.
 2. Facebook will match the hash data and their own hash data. Once they've matched, they create aggregated view of that data and pass into Events Manager.
-  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/hash.png" alt="hash process" width="800" style="marginTop: 12;"/>
-3. After the match process, Facebook deletes all the individual data. **(1 question)**
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/hash.jpg" alt="hash process" width="800" style="marginTop: 12;"/>
+3. After the match process, Facebook deletes all the individual data.
 
-> Is the data being sent to Facebook secure? Yes, it is secure by hashed.
+> 1. Is the data being sent to Facebook secure? Yes, it is secure by hashed.
 >
-> When do you hash or normalize data? Always.
+> 2. When do you hash or normalize data? Always.
 > - Hashing: It just depends whether you hash it manually or it's done automatically from Facebook. If you use `fbq()`, data is hashed automatically, but if you use `<img>` tags, you need to hash it.
 > - Normalize: It just means follow specific formats such as removing spaces or lowercasing.
->
-> Do login or financial data from the page get sent to Facebook? No.
+> 
+> 3. Do login or financial data from the page get sent to Facebook? No.
 
 ### Pixel Code
 #### Base Code
@@ -122,12 +122,12 @@ Installed on all pages to provide baseline measurement (usually with `PageView` 
 </script> 
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={your-pixel-id}&ev=PageView&noscript=1" /></noscript>
 ```
-- When run, the base code will download a library of functions which you can then **use for conversion tracking**. It also automatically tracks a single `PageView` conversion by calling the fbq() function each time it loads.
-- The code is always placed within open and close **header tags**. To do so,
+- When run, the base code will download a library of functions which you can then **use for conversion tracking**. It also automatically tracks a single `PageView` conversion by calling the `fbq()` function each time it loads.
+- The code is always placed within open and close **header tags**. Because
   - it **reduces** the chances of browsers or third-party **code blocking** the Pixel's execution.
   - it executes the code sooner, **increasing the chance** that your visitors **are tracked** before they leave your page.
-- The code contains Javascript and no-Javascript parts. **(1 ~ 2 questions)**
-- By default it starts capturing HTTP data and the on-page metadata.
+- The code contains Javascript and no-Javascript parts.
+
 > Should pixel be included on all pages? Yes, basic code should be included on all pages.
 
 #### Event Code
@@ -141,22 +141,31 @@ By putting the details on the standard event, we can get reporting the types of 
 Custom parameters can be used in both standard and custom events.
 
 #### Custom Events
-By defining custom events, all stages except the final conversion stage in the journey can be used. The disadvantage is that custom events can't be optimized.
-- **Support parameters**.
-- Use `fbq('track')` anywhere in your website **between `<body>` tags** to track standard events.
+By defining custom events, all stages except the final conversion stage in the journey can be used. Note that
+- Custom events can't be optimized.
 - Custom events' name are limited in 50 characters.
 
 #### URL-based Custom Conversions
 - The default `PageView` event record the **referrer URL** of the page. Therefore you can setup a custom conversions that tracks website visitors who have viewed a specific URL. This can be used in the final stage, that is conversion.
 - Once tracked, custom conversions can be used to **optimize** your ad campaigns, to **define custom audiences**, and to **further refine custom audiences** that rely on standard or custom events.
-- Create custom conversions in Events Manager.
+- Custom conversions are created in Events Manager.
 - The maximum number of custom conversions **per ad account** is **100**.
 
-<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/customer%20journey.png" alt="hash process" width="800" style="marginTop: 12;"/>
+<img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/customer%20journey.png" alt="hash process" width="900" style="margin-top: 12;"/>
+
+### Multiple Pixels
+If there are multiple pixels in a website, use `fbq('trackSingle', '{pixel_id}', 'Purchase');` to track specific pixel.
+
+### Impact of iOS 14.5+
+With the enforcement of the **ATT(App Tracking Transparency) prompt**, you can only use eight conversion events for campaign optimization.
+
+Go to `Events Manager > pixel`, there is a tab `Aggregated Event Measurement(彙總事件成效衡量)`, contains a list of the top eight events that Facebook automatically configures based on your previous activity. Click `Configure Web Event(設定網站事件) > Edit Events(管理事件)` to update, add or rank the prioritization of your events for optimization.
+
+Note that to edit events, you should first **verify the domains**.
 
 ## Advanced Matching
 
-Advanced matching helps to match users more accurately by passing additional hashed information such as email, phone, gender, or location.
+Advanced matching helps to match users more accurately by passing additional hashed information such as email, phone, gender, or location. To do so, **custom audiences size** can be increased, and  **conversion-optimized campaigns** operate more efficiently.
 
 ### Methods
 #### Automatic
@@ -167,7 +176,7 @@ Advanced matching helps to match users more accurately by passing additional has
   - No iFrame.
   - Not sensitive customer businesses such as health and finance.
 #### Manual
-- Can use under JavaScript and no-Javascript, no-iFrame and iFrame circumstances. Can use on regulated businesses.
+- Can use under JavaScript and **no-Javascript**, no-iFrame and **iFrame** circumstances. Can use on **regulated businesses**.
 - Required developers.
 
 ### Fields
@@ -209,7 +218,24 @@ Advanced matching helps to match users more accurately by passing additional has
   ``` 
 
 ## Catalog and Dynamic Ads
-### Required Events
+### Methods to Manage Catalog
+#### Add manually
+#### Bulk upload
+There are size limits towards files to be uploaded:
+- scheduled feed upload: **8GB**.
+- compressed files: **30GB** when uncompressed.
+- one-time file upload: **100MB**.
+#### Facebook pixel
+Import the details of the product automatically by scraping the data off the product page, and the scrap only happen when a visitor visits the product. Note that **if a product hasn't been viewed, it won't ever be entered the catalog.**
+
+| | Not Change Often | Change Daily/Weekly | Change More Than Daily or Realtime |
+| - | - | - | - |
+| Small Inventory | Add Manually | Bulk Upload + Scheduled Feed | Facebook Pixel |
+| Medium to Large Inventory | Add Manually + Bulk Upload | Bulk Upload + Scheduled Feed | Facebook Pixel |
+
+### Required Fields (Upload)
+Check [documentation](https://developers.facebook.com/docs/commerce-platform/catalog/fields) to learn required and optional fields in catalog.
+### Required Events (Pixel)
 By passing the three events, the pixel and the catalog are able to link viewed product with a user profile.
 
 | Event Name | Required Parameters |
@@ -219,8 +245,8 @@ By passing the three events, the pixel and the catalog are able to link viewed p
 | `Purchase` | `content_type`, `contents`/`content_ids`, `currency`, `value` |
 #### content_type
 Can be **product** or **product_group**.
-- When `content_type: 'product'`, ID being passed into contents/content_ids should be **IDs of product**.
-- When `content_type: 'product_group'`, ID being passed into contents/content_ids should be **IDs of product group**.
+- When `content_type: 'product'`, ID being passed into contents/content_ids should be **IDs of product (`id`)**.
+- When `content_type: 'product_group'`, ID being passed into contents/content_ids should be **IDs of product group (`item_group_id`)**.
 
 #### contents/content_ids
 ```js
@@ -238,17 +264,6 @@ fbq('track', 'Purchase', {
   content_type: 'product'
 });
 ```
-
-### Manage Catalog
-#### Add manually
-#### Bulk upload
-#### Facebook pixel
-Import the details of the product automatically by scraping the data off the product page, and the scrap only happen when a visitor visits the product. **If a product hasn't been viewed, it won't ever be entered the catalog.**
-
-| | Not Change Often | Change Daily/Weekly | Change More Than Daily or Realtime |
-| - | - | - | - |
-| Small Inventory | Add Manually | Bulk Upload + Scheduled Feed | Facebook Pixel |
-| Medium to Large Inventory | Add Manually + Bulk Upload | Bulk Upload + Scheduled Feed | Facebook Pixel |
 
 ## Troubleshoot Catalog & Dynamic Ads
 #### Not seeing any data within catalog / **low catalog match rate** / audience size drop.
@@ -281,8 +296,10 @@ Import the details of the product automatically by scraping the data off the pro
 ### Troubleshoot Tools
 #### Pixel Helper
 - Are pixels firing correctly with the correct parameters?
+- Time lag: no.
 #### Events Manager
 - Are pixel events reaching BM account?
+- Time lag: **20 minutes**.
 #### Facebook Debug Tools
 - [Product Catalog Debug Tool](https://business.facebook.com/ads/microdata/debug): check if metadata in a website be correctly setup.
 - [Retargeting Pixel Debug Tool](https://business.facebook.com/ads/retargeting_pixel/debug/): check if the catalog is associated with pixel.
