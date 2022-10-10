@@ -301,7 +301,8 @@ fbq('track', 'Purchase', {
 - Are pixel events reaching BM account?
 - Time lag: **20 minutes**.
 #### Facebook Debug Tools
-- [Product Catalog Debug Tool](https://business.facebook.com/ads/microdata/debug): check if metadata in a website be correctly setup.
+- [Product Catalog Debug Tool (Microdata Debug Tool)](https://business.facebook.com/ads/microdata/debug): check if metadata in a website be correctly setup. The errors will show like this
+  <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/microdata%20debug%20tool.png" alt="microdata debug tool" width="800" />
 - [Retargeting Pixel Debug Tool](https://business.facebook.com/ads/retargeting_pixel/debug/): check if the catalog is associated with pixel.
   1. Show a list of catalog.
   2. Show a chart with types of standard events and their counts. You should see a full set of standard events (`ViewContent`, `AddToCart` and `Purchase`).
