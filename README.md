@@ -21,12 +21,12 @@
 - [Impact of iOS 14.5+ on Certified Marketing Developer Collection](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/ios-14.5-impact.md)
 
 ### Coding Exercise (500-201)
-- [Takeaway for Coding Exercise](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/coding-exercise.md)
+- [Cheat Sheet for Coding Exercise](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/coding-exercise.md)
 - [Real Problem Set](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Coding%20Exercise)
 
 
 ### Exam (500-101)
-- [Takeaway for Exam](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md)
+- [Cheat Sheet for Exam](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md)
 
 ### Mind Map
 - [Permalink](https://miro.com/app/board/uXjVPXotFXA=/?share_link_id=837443898094)

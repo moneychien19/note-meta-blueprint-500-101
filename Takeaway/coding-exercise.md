@@ -1,4 +1,4 @@
-# Coding Exercise Key Knowledge
+# Coding Exercise Cheat Sheet
 
 ## Initial the Pixel
 1. Create a new pixel (in BM).

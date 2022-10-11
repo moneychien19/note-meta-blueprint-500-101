@@ -98,9 +98,9 @@ A data feed file is a plaintext or spreadsheet file that represents the items in
 - `availability`: `in stock`, `out of stock` or `available for order`.
 - `condition`: `new`, `used` or `refurbished`.
 - `price`: cost and currency of item, for example, `99.99 USD`.
-- `link`: URL of product page where to buy item, can be HTTP or HTTPS.
+- `link`: URL of product page where to buy item, **should start with HTTP or HTTPS**.
 - `brand`: brand name.
-- `image_link`: URL of main image of item (limit in 8MB), must be JPG or PNG.
+- `image_link`: URL of main image of item (limit in 8MB), must be JPG or PNG, **should start with HTTP or HTTPS**
 	- additional image size requirements
 		- Instagram shopping (square 1:1 format)
 			- Minimum resolution: 500 x 500px.

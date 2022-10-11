@@ -1,3 +1,4 @@
+# Exam Cheat Sheet
 ## Road Map
 - [Business Manager](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#business-manager)
   - Tools
@@ -6,15 +7,17 @@
 - [Pixel](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#pixel)
   - Hash
   - Pixel Code
-  - Events
-  - Parameters
+  - Target: standard parameters/custom parameters/custom events/custom conversions
+  - Multiple Pixels
+  - Impact of iOS 14.5
 - [Advanced Matching](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#advanced-matching)
   - Methods: manual/automatic
-  - Advanced Matching Code
   - Fields
+  - Advanced Matching Code
 - [Catalog and Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#catalog-and-dynamic-ads)
   - Methods: manual/bulk upload/pixel
-  - Required Events
+  - Support Fields (Upload)
+  - Required Events (Pixel)
 - [Troubleshoot Catalog & Dynamic Ads](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#troubleshoot-catalog--dynamic-ads)
 - [Troubleshoot Pixels](https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/exam.md#troubleshoot-pixels)
   - Common Mistakes
@@ -131,11 +134,36 @@ Installed on all pages to provide baseline measurement (usually with `PageView` 
 > Should pixel be included on all pages? Yes, basic code should be included on all pages.
 
 #### Event Code
-Added to base code and used on specific page to track events. For example, `AddToCart` or `Purchase` event.
+Added to base code and used on specific page to track standard events. For example, `AddToCart`, `ViewContent` or `Purchase` event.
+
+Other common standard events
+- AddPaymentInfo, CompleteRegistration, InitiateCheckout, Lead, Search, Subscribe
+- AddToWishlist, Contact, CustomizeProduct, Donate, FindLocation, Schedule, StartTrial, SubmitApplication
 
 ### Target More specifically
-If you want to target more specifically, consider using **custom parameters**, **custom events**, or **URL-based custom conversion**.
-#### Custom Parameters (Use This First)
+If you want to target more specifically, consider using **standard parameters**, **custom parameters**, **custom events**, or **URL-based custom conversion**.
+#### Standard Parameters (Use This First)
+[Standard parameters](https://developers.facebook.com/docs/meta-pixel/reference#object-properties) are listed in documentation.
+
+Here are some common parameters.
+
+| Parameter | Type | Example |
+| - | - | - |
+| content_type | string | must be `product` or `product_group` |
+| content_ids | string[] | ['product_1', 'product_2'] |
+| contents | Object[] | [{ id: 'product_1', quantity: 2 }, { id: 'product_2', quantity: 3 }] |
+| currency | string | 'USD', 'GBP' |
+| value | number | 19.99 |
+| content_category | string | 'shoes' |
+
+Other parameters
+- content_name (string) 產品名稱
+- num_items (int) 初始化結帳的項目數量
+- predicted_ltv (number) 由廣告商定義之訂閱者的預測終身價值
+- search_string (string) 搭配 `Search` 事件使用，使用者在搜尋中輸入的字串
+- status (bool) 搭配 `CompleteRegistration` 事件使用，以顯示註冊的狀態
+
+#### Custom Parameters (Use This Second)
 By putting the details on the standard event, we can get reporting the types of people we're converting for. This can be used in the whole customer journey.
 
 Custom parameters can be used in both standard and custom events.
@@ -154,7 +182,7 @@ By defining custom events, all stages except the final conversion stage in the j
 <img src="https://github.com/moneychien19/note-meta-blueprint-500-101/blob/main/Takeaway/customer%20journey.png" alt="hash process" width="900" style="margin-top: 12;"/>
 
 ### Multiple Pixels
-If there are multiple pixels in a website, use `fbq('trackSingle', '{pixel_id}', 'Purchase');` to track specific pixel.
+If there are multiple pixels in a website, use `fbq('trackSingle', '{pixel_id}', '{event_name}');` to track specific pixel.
 
 ### Impact of iOS 14.5+
 With the enforcement of the **ATT(App Tracking Transparency) prompt**, you can only use eight conversion events for campaign optimization.
@@ -233,8 +261,22 @@ Import the details of the product automatically by scraping the data off the pro
 | Small Inventory | Add Manually | Bulk Upload + Scheduled Feed | Facebook Pixel |
 | Medium to Large Inventory | Add Manually + Bulk Upload | Bulk Upload + Scheduled Feed | Facebook Pixel |
 
-### Required Fields (Upload)
+### Support Fields (Upload)
 Check [documentation](https://developers.facebook.com/docs/commerce-platform/catalog/fields) to learn required and optional fields in catalog.
+
+#### Required Fields
+| Field | Type | Example |
+| - | - | - |
+| id | string (limit 100 char) | 'product_1' |
+| title | string (limit 150 char) | 'Blue Cotton T-Shirt' |
+| description | string (limit 9999 char) | |
+| availability | string | must be `in stock`, `out of stock` or `available for order` |
+| condition | string | must be `new`, `refurbished` or `used` |
+| price | string (price + currency code) | '9.99 USD' |
+| link | string (begin with **http://** or **https://**) | |
+| image_link | string (begin with **http://** or **https://**, end with **jpg** or **png**) | |
+| brand | string (limit 100 char) | 'Jasper's Market' | 
+
 ### Required Events (Pixel)
 By passing the three events, the pixel and the catalog are able to link viewed product with a user profile.
 
